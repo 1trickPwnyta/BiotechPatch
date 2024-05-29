@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BiotechPatchRefs.cs" />
+    <Compile Include="DeathrestAutoWake\Patch_Gene_Deathrest.cs" />
     <Compile Include="Debug.cs" />
     <Compile Include="BiotechPatchMod.cs" />
     <Compile Include="MechsInColonistBar\ColonistBarUtility.cs" />
