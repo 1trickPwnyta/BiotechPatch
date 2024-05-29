@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>1trickPwnyta's Biotech Patch</name>
+	<author>1trickPwnyta</author>
+	<packageId>biotechpatch.1trickPwnyta</packageId>
+	<supportedVersions>
+		<li>1.5</li>
+	</supportedVersions>
+	<description>
+This mod makes a handful of small tweaks to the Biotech DLC that are intended to make the game a bit more enjoyable without changing the gameplay too much.
+
+Full list of tweaks:
+
+	</description>
+	<url>https://github.com/1trickPwnyta/BiotechPatch</url>
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+		</li>
+	</modDependencies>
+</ModMetaData>
