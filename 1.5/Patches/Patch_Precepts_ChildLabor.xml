@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="BiotechPatch.PatchOperationReplaceIf">
+		<xpath>/Defs/PreceptDef[defName="ChildLabor_Encouraged"]/comps/li[thought="ChildLabor_Encouraged_ChildAssignedRecreation"]/description</xpath>
+		<value>
+			<description>Children not assigned work</description>
+		</value>
+		<setting>ChildLaborEncouraged</setting>
+	</Operation>
+	<Operation Class="BiotechPatch.PatchOperationReplaceIf">
+		<xpath>/Defs/ThoughtDef[defName="ChildLabor_Encouraged_ChildAssignedRecreation"]/workerClass</xpath>
+		<value>
+			<workerClass>BiotechPatch.ChildLaborEncouraged.ThoughtWorker_Precept_ChildLabor_ChildNotAssignedWork</workerClass>
+		</value>
+		<setting>ChildLaborEncouraged</setting>
+	</Operation>
+	<Operation Class="BiotechPatch.PatchOperationReplaceIf">
+		<xpath>/Defs/ThoughtDef[defName="ChildLabor_Encouraged_ChildAssignedRecreation"]/stages/li[label="children assigned recreation"]/label</xpath>
+		<value>
+			<label>children not assigned work</label>
+		</value>
+		<setting>ChildLaborEncouraged</setting>
+	</Operation>
+</Patch>

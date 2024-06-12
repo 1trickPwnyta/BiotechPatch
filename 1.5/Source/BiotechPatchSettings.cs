@@ -10,6 +10,8 @@ namespace BiotechPatch
         public static bool MechsOutsideRadius = true;
         public static bool HemogenExtractionSpam = true;
         public static bool DeathrestWakeupMessage = true;
+        public static bool MechAutoRepair = true;
+        public static bool ChildLaborEncouraged = true;
 
         public static void DoSettingsWindowContents(Rect inRect)
         {
@@ -22,6 +24,8 @@ namespace BiotechPatch
             listingStandard.CheckboxLabeled("BiotechPatch_MechsOutsideRadius".Translate(), ref MechsOutsideRadius);
             listingStandard.CheckboxLabeled("BiotechPatch_HemogenExtractionSpam".Translate(), ref HemogenExtractionSpam);
             listingStandard.CheckboxLabeled("BiotechPatch_DeathrestWakeupMessage".Translate(), ref DeathrestWakeupMessage);
+            listingStandard.CheckboxLabeled("BiotechPatch_MechAutoRepair".Translate(), ref MechAutoRepair);
+            listingStandard.CheckboxLabeled("BiotechPatch_ChildLaborEncouraged".Translate() + " " + "BiotechPatch_RestartRequired".Translate(), ref ChildLaborEncouraged);
 
             listingStandard.End();
         }
@@ -33,6 +37,8 @@ namespace BiotechPatch
             Scribe_Values.Look(ref MechsOutsideRadius, "MechsOutsideRadius", true);
             Scribe_Values.Look(ref HemogenExtractionSpam, "HemogenExtractionSpam", true);
             Scribe_Values.Look(ref DeathrestWakeupMessage, "DeathrestWakeupMessage", true);
+            Scribe_Values.Look(ref MechAutoRepair, "MechAutoRepair", true);
+            Scribe_Values.Look(ref ChildLaborEncouraged, "ChildLaborEncouraged", true);
         }
     }
 }
