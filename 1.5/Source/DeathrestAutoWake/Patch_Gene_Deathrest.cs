@@ -7,7 +7,10 @@ namespace BiotechPatch.DeathrestAutoWake
     {
         public static void Postfix(Gene_Deathrest __instance)
         {
-            __instance.autoWake = true;
+            if (BiotechPatchSettings.DeathrestAutoWake)
+            {
+                __instance.autoWake = true;
+            }
         }
     }
 }

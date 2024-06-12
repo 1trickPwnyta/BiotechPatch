@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<BiotechPatch_WokeFromDeathrest>{PAWN_nameDef} has finished deathresting.</BiotechPatch_WokeFromDeathrest>
+	<BiotechPatch_DeathrestAutoWake>Automatically enable auto-wake for deathresting pawns</BiotechPatch_DeathrestAutoWake>
+	<BiotechPatch_MechsInColonistBar>Show mechs in colonist bar</BiotechPatch_MechsInColonistBar>
+	<BiotechPatch_MechsOutsideRadius>Allow moving mechs outside the mechanitor control radius</BiotechPatch_MechsOutsideRadius>
+	<BiotechPatch_HemogenExtractionSpam>Disable message when extracting hemogen from hostile faction</BiotechPatch_HemogenExtractionSpam>
+	<BiotechPatch_DeathrestWakeupMessage>Show message when deathrester auto-wakes</BiotechPatch_DeathrestWakeupMessage>
+</LanguageData>

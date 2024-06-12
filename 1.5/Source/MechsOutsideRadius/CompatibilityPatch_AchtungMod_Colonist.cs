@@ -10,21 +10,14 @@ namespace BiotechPatch.MechsOutsideRadius
     {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
-            bool foundBiotech = false;
-            bool finished = false;
-
             foreach (CodeInstruction instruction in instructions)
             {
                 if (instruction.opcode == OpCodes.Call && (MethodInfo)instruction.operand == BiotechPatchRefs.m_ModsConfig_get_BiotechActive)
                 {
-                    foundBiotech = true;
+                    yield return new CodeInstruction(OpCodes.Ldsfld, BiotechPatchRefs.f_BiotechPatchSettings_MechsOutsideRadius);
+                    yield return new CodeInstruction(OpCodes.Ldc_I4_1);
+                    yield return new CodeInstruction(OpCodes.Xor);
                     continue;
-                }
-
-                if (foundBiotech && !finished && instruction.opcode == OpCodes.Brfalse)
-                {
-                    instruction.opcode = OpCodes.Br;
-                    finished = true;
                 }
 
                 yield return instruction;

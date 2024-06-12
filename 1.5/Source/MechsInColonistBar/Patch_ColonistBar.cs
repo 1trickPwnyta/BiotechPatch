@@ -47,7 +47,7 @@ namespace BiotechPatch.MechsInColonistBar
                     yield return new CodeInstruction(OpCodes.Ldsfld, BiotechPatchRefs.f_ColonistBar_tmpPawns);
                     yield return new CodeInstruction(OpCodes.Ldloc_S, 12);
                     yield return new CodeInstruction(OpCodes.Callvirt, BiotechPatchRefs.m_List_Pawn_get_Item);
-                    yield return new CodeInstruction(OpCodes.Callvirt, BiotechPatchRefs.m_Pawn_get_IsColonyMech);
+                    yield return new CodeInstruction(OpCodes.Call, BiotechPatchRefs.m_ColonistBarUtility_ShouldShowMechInColonistBar);
                     yield return instruction;
                     addedMechCheck = true;
                     continue;
