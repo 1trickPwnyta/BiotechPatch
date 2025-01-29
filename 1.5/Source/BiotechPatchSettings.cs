@@ -12,6 +12,7 @@ namespace BiotechPatch
         public static bool DeathrestWakeupMessage = true;
         public static bool MechAutoRepair = true;
         public static bool ChildLaborEncouraged = true;
+        public static bool AllowForbiddenXenogermImplantation = true;
 
         public static void DoSettingsWindowContents(Rect inRect)
         {
@@ -26,6 +27,7 @@ namespace BiotechPatch
             listingStandard.CheckboxLabeled("BiotechPatch_DeathrestWakeupMessage".Translate(), ref DeathrestWakeupMessage);
             listingStandard.CheckboxLabeled("BiotechPatch_MechAutoRepair".Translate(), ref MechAutoRepair);
             listingStandard.CheckboxLabeled("BiotechPatch_ChildLaborEncouraged".Translate() + " " + "BiotechPatch_RestartRequired".Translate(), ref ChildLaborEncouraged);
+            listingStandard.CheckboxLabeled("BiotechPatch_AllowForbiddenXenogermImplantation".Translate(), ref AllowForbiddenXenogermImplantation);
 
             listingStandard.End();
         }
@@ -39,6 +41,7 @@ namespace BiotechPatch
             Scribe_Values.Look(ref DeathrestWakeupMessage, "DeathrestWakeupMessage", true);
             Scribe_Values.Look(ref MechAutoRepair, "MechAutoRepair", true);
             Scribe_Values.Look(ref ChildLaborEncouraged, "ChildLaborEncouraged", true);
+            Scribe_Values.Look(ref AllowForbiddenXenogermImplantation, "AllowForbiddenXenogermImplantation", true);
         }
     }
 }

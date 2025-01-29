@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllowForbiddenXenogermImplantation\Patch_Recipe_ImplantXenogerm.cs" />
     <Compile Include="BiotechPatchRefs.cs" />
     <Compile Include="BiotechPatchSettings.cs" />
     <Compile Include="ChildLaborEncouraged\ThoughtWorker_Precept_ChildLabor_ChildNotAssignedWork.cs" />
