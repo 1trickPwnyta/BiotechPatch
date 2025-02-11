@@ -51,9 +51,18 @@
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AllowForbiddenXenogermImplantation\Patch_Recipe_ImplantXenogerm.cs" />
+    <Compile Include="AutoChildNicknamesDisabled\Patch_Pawn_AgeTracker.cs" />
     <Compile Include="BiotechPatchRefs.cs" />
     <Compile Include="BiotechPatchSettings.cs" />
     <Compile Include="ChildLaborEncouraged\ThoughtWorker_Precept_ChildLabor_ChildNotAssignedWork.cs" />
@@ -62,6 +71,9 @@
     <Compile Include="DeathrestWakeupMessage\Patch_Gene_Deathrest.cs" />
     <Compile Include="Debug.cs" />
     <Compile Include="BiotechPatchMod.cs" />
+    <Compile Include="Dialog_Input.cs" />
+    <Compile Include="DrugDeficiencyAlert\Alert_DrugDeficiencyComa.cs" />
+    <Compile Include="DrugDeficiencyAlert\Alert_DrugDeficiency.cs" />
     <Compile Include="HemogenExtractionSpam\GoodwillUtility.cs" />
     <Compile Include="HemogenExtractionSpam\Patch_RecipeWorker.cs" />
     <Compile Include="MechAutoRepair\Patch_CompMechRepairable.cs" />

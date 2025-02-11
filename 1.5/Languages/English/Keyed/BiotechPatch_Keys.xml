@@ -10,4 +10,12 @@
 	<BiotechPatch_MechAutoRepair>Automatically enable auto-repair for mechs</BiotechPatch_MechAutoRepair>
 	<BiotechPatch_ChildLaborEncouraged>Child labor: encouraged requires scheduled work</BiotechPatch_ChildLaborEncouraged>
 	<BiotechPatch_AllowForbiddenXenogermImplantation>Allow xenogerm implantation via health tab for xenogerms that are forbidden</BiotechPatch_AllowForbiddenXenogermImplantation>
+	<BiotechPatch_DrugDeficiencyAlert>Show alert for drug deficiency due to genes</BiotechPatch_DrugDeficiencyAlert>
+	<BiotechPatch_LoadGrowthVats>Change text "growing" growth vats to "loading" growth vats</BiotechPatch_LoadGrowthVats>
+	<BiotechPatch_AutoChildNicknamesDisabled>Disable auto-nicknaming of children at growth moments</BiotechPatch_AutoChildNicknamesDisabled>
+	<BiotechPatch_DrugDeficiencyAlertLabel>Drug deficiency</BiotechPatch_DrugDeficiencyAlertLabel>
+	<BiotechPatch_DrugDeficiencyAlertDesc>People are deficient in their life-sustaining drugs:\n{0}</BiotechPatch_DrugDeficiencyAlertDesc>
+	<BiotechPatch_DrugDeficiencyComaAlertLabel>Drug deficiency coma</BiotechPatch_DrugDeficiencyComaAlertLabel>
+	<BiotechPatch_DrugDeficiencyComaAlertDesc>Someone is in a coma due to a drug deficiency:\n{0}\n\nIf they do not get the necessary drugs, they will eventually die.</BiotechPatch_DrugDeficiencyComaAlertDesc>
+	<BiotechPatch_InputIsInvalid>Please enter valid input.</BiotechPatch_InputIsInvalid>
 </LanguageData>

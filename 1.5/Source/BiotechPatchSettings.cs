@@ -13,6 +13,9 @@ namespace BiotechPatch
         public static bool MechAutoRepair = true;
         public static bool ChildLaborEncouraged = true;
         public static bool AllowForbiddenXenogermImplantation = true;
+        public static bool DrugDeficiencyAlert = true;
+        public static bool LoadGrowthVats = true;
+        public static bool AutoChildNicknamesDisabled = true;
 
         public static void DoSettingsWindowContents(Rect inRect)
         {
@@ -28,6 +31,9 @@ namespace BiotechPatch
             listingStandard.CheckboxLabeled("BiotechPatch_MechAutoRepair".Translate(), ref MechAutoRepair);
             listingStandard.CheckboxLabeled("BiotechPatch_ChildLaborEncouraged".Translate() + " " + "BiotechPatch_RestartRequired".Translate(), ref ChildLaborEncouraged);
             listingStandard.CheckboxLabeled("BiotechPatch_AllowForbiddenXenogermImplantation".Translate(), ref AllowForbiddenXenogermImplantation);
+            listingStandard.CheckboxLabeled("BiotechPatch_DrugDeficiencyAlert".Translate(), ref DrugDeficiencyAlert);
+            listingStandard.CheckboxLabeled("BiotechPatch_LoadGrowthVats".Translate() + " " + "BiotechPatch_RestartRequired".Translate(), ref LoadGrowthVats);
+            listingStandard.CheckboxLabeled("BiotechPatch_AutoChildNicknamesDisabled".Translate(), ref AutoChildNicknamesDisabled);
 
             listingStandard.End();
         }
@@ -42,6 +48,9 @@ namespace BiotechPatch
             Scribe_Values.Look(ref MechAutoRepair, "MechAutoRepair", true);
             Scribe_Values.Look(ref ChildLaborEncouraged, "ChildLaborEncouraged", true);
             Scribe_Values.Look(ref AllowForbiddenXenogermImplantation, "AllowForbiddenXenogermImplantation", true);
+            Scribe_Values.Look(ref DrugDeficiencyAlert, "DrugDeficiencyAlert", true);
+            Scribe_Values.Look(ref LoadGrowthVats, "LoadGrowthVats", true);
+            Scribe_Values.Look(ref AutoChildNicknamesDisabled, "AutoChildNicknamesDisabled", true);
         }
     }
 }
