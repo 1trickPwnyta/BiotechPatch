@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="AncientExostriderRemains"]/comps</xpath>
+		<value>
+			<li Class="CompProperties">
+				<compClass>BiotechPatch.ExostriderLostAllowsComplex.Comp_DatacoreAbandonable</compClass>
+			</li>
+		</value>
+	</Operation>
+</Patch>

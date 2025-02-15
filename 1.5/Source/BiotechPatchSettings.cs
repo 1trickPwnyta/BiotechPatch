@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace BiotechPatch
@@ -16,6 +17,14 @@ namespace BiotechPatch
         public static bool DrugDeficiencyAlert = true;
         public static bool LoadGrowthVats = true;
         public static bool AutoChildNicknamesDisabled = true;
+        public static bool ChildrenGoByFirstName = true;
+        public static bool XenogermCreationForced = true;
+        public static bool GeneTraitsDontCancelIdentical = true;
+        public static bool GrowthMomentChoiceColors = true;
+        public static bool GrowthMomentTraitSuppression = true;
+        public static bool ExostriderLostAllowsComplex = true;
+        public static bool CustomHybridXenotypes = true;
+        public static bool BreastfeedingCanBeInterrupted = true;
 
         public static void DoSettingsWindowContents(Rect inRect)
         {
@@ -34,6 +43,14 @@ namespace BiotechPatch
             listingStandard.CheckboxLabeled("BiotechPatch_DrugDeficiencyAlert".Translate(), ref DrugDeficiencyAlert);
             listingStandard.CheckboxLabeled("BiotechPatch_LoadGrowthVats".Translate() + " " + "BiotechPatch_RestartRequired".Translate(), ref LoadGrowthVats);
             listingStandard.CheckboxLabeled("BiotechPatch_AutoChildNicknamesDisabled".Translate(), ref AutoChildNicknamesDisabled);
+            listingStandard.CheckboxLabeled("BiotechPatch_ChildrenGoByFirstName".Translate(), ref ChildrenGoByFirstName);
+            listingStandard.CheckboxLabeled("BiotechPatch_XenogermCreationForced".Translate(), ref XenogermCreationForced);
+            listingStandard.CheckboxLabeled("BiotechPatch_GeneTraitsDontCancelIdentical".Translate(), ref GeneTraitsDontCancelIdentical);
+            listingStandard.CheckboxLabeled("BiotechPatch_GrowthMomentChoiceColors".Translate(), ref GrowthMomentChoiceColors);
+            listingStandard.CheckboxLabeled("BiotechPatch_GrowthMomentTraitSuppression".Translate(), ref GrowthMomentTraitSuppression);
+            listingStandard.CheckboxLabeled("BiotechPatch_ExostriderLostAllowsComplex".Translate(), ref ExostriderLostAllowsComplex);
+            listingStandard.CheckboxLabeled("BiotechPatch_CustomHybridXenotypes".Translate(), ref CustomHybridXenotypes);
+            listingStandard.CheckboxLabeled("BiotechPatch_BreastfeedingCanBeInterrupted".Translate(), ref BreastfeedingCanBeInterrupted);
 
             listingStandard.End();
         }
@@ -51,6 +68,14 @@ namespace BiotechPatch
             Scribe_Values.Look(ref DrugDeficiencyAlert, "DrugDeficiencyAlert", true);
             Scribe_Values.Look(ref LoadGrowthVats, "LoadGrowthVats", true);
             Scribe_Values.Look(ref AutoChildNicknamesDisabled, "AutoChildNicknamesDisabled", true);
+            Scribe_Values.Look(ref ChildrenGoByFirstName, "ChildrenGoByFirstName", true);
+            Scribe_Values.Look(ref XenogermCreationForced, "XenogermCreationForced", true);
+            Scribe_Values.Look(ref GeneTraitsDontCancelIdentical, "GeneTraitsDontCancelIdentical", true);
+            Scribe_Values.Look(ref GrowthMomentChoiceColors, "GrowthMomentChoiceColors", true);
+            Scribe_Values.Look(ref GrowthMomentTraitSuppression, "GrowthMomentTraitSuppression", true);
+            Scribe_Values.Look(ref ExostriderLostAllowsComplex, "ExostriderLostAllowsComplex", true);
+            Scribe_Values.Look(ref CustomHybridXenotypes, "CustomHybridXenotypes", true);
+            Scribe_Values.Look(ref BreastfeedingCanBeInterrupted, "BreastfeedingCanBeInterrupted", true);
         }
     }
 }

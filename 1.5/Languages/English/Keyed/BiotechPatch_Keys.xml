@@ -13,9 +13,18 @@
 	<BiotechPatch_DrugDeficiencyAlert>Show alert for drug deficiency due to genes</BiotechPatch_DrugDeficiencyAlert>
 	<BiotechPatch_LoadGrowthVats>Change text "growing" growth vats to "loading" growth vats</BiotechPatch_LoadGrowthVats>
 	<BiotechPatch_AutoChildNicknamesDisabled>Disable auto-nicknaming of children at growth moments</BiotechPatch_AutoChildNicknamesDisabled>
+	<BiotechPatch_ChildrenGoByFirstName>Children are called by their first name by default</BiotechPatch_ChildrenGoByFirstName>
+	<BiotechPatch_XenogermCreationForced>Prioritizing creating a xenogerm won't be interrupted at the worker's whimsy</BiotechPatch_XenogermCreationForced>
+	<BiotechPatch_GeneTraitsDontCancelIdentical>Bug fix: Same xenogene/endogene can both cancel each other out</BiotechPatch_GeneTraitsDontCancelIdentical>
+	<BiotechPatch_GrowthMomentChoiceColors>Show colored trait/passion choices for growth moments based on utility</BiotechPatch_GrowthMomentChoiceColors>
+	<BiotechPatch_GrowthMomentTraitSuppression>Bug fix: Traits selected at growth moment are unsuppressed by genes that should suppress them</BiotechPatch_GrowthMomentTraitSuppression>
+	<BiotechPatch_ExostriderLostAllowsComplex>Bug fix: Abandoning the exostrider remains prevents mechanitor complex quest</BiotechPatch_ExostriderLostAllowsComplex>
+	<BiotechPatch_CustomHybridXenotypes>Bug fix: Children of a custom xenotype and another custom xenotype or baseliner are labeled as baseliner</BiotechPatch_CustomHybridXenotypes>
+	<BiotechPatch_BreastfeedingCanBeInterrupted>Breastfeeding can be interrupted if the lactator has more important things to do</BiotechPatch_BreastfeedingCanBeInterrupted>
 	<BiotechPatch_DrugDeficiencyAlertLabel>Drug deficiency</BiotechPatch_DrugDeficiencyAlertLabel>
 	<BiotechPatch_DrugDeficiencyAlertDesc>People are deficient in their life-sustaining drugs:\n{0}</BiotechPatch_DrugDeficiencyAlertDesc>
 	<BiotechPatch_DrugDeficiencyComaAlertLabel>Drug deficiency coma</BiotechPatch_DrugDeficiencyComaAlertLabel>
 	<BiotechPatch_DrugDeficiencyComaAlertDesc>Someone is in a coma due to a drug deficiency:\n{0}\n\nIf they do not get the necessary drugs, they will eventually die.</BiotechPatch_DrugDeficiencyComaAlertDesc>
 	<BiotechPatch_InputIsInvalid>Please enter valid input.</BiotechPatch_InputIsInvalid>
+	<BiotechPatch_SuppressedBy>Suppressed by</BiotechPatch_SuppressedBy>
 </LanguageData>

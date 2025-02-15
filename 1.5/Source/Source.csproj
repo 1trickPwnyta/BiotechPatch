@@ -63,9 +63,19 @@
   <ItemGroup>
     <Compile Include="AllowForbiddenXenogermImplantation\Patch_Recipe_ImplantXenogerm.cs" />
     <Compile Include="AutoChildNicknamesDisabled\Patch_Pawn_AgeTracker.cs" />
+    <Compile Include="BiotechPatchInitializer.cs" />
     <Compile Include="BiotechPatchRefs.cs" />
     <Compile Include="BiotechPatchSettings.cs" />
+    <Compile Include="BreastfeedingCanBeInterrupted\Patch_ChildcareUtility.cs" />
+    <Compile Include="BreastfeedingCanBeInterrupted\Patch_JobGiver_Autofeed.cs" />
+    <Compile Include="BreastfeedingCanBeInterrupted\Patch_WorkGiver_Breastfeed.cs" />
+    <Compile Include="BreastfeedingCanBeInterrupted\WorkGiver_BreastfeedCarried.cs" />
     <Compile Include="ChildLaborEncouraged\ThoughtWorker_Precept_ChildLabor_ChildNotAssignedWork.cs" />
+    <Compile Include="ChildrenGoByFirstName\Patch_Dialog_NamePawn.cs" />
+    <Compile Include="ChildrenGoByFirstName\Patch_NameTriple.cs" />
+    <Compile Include="ChildrenGoByFirstName\Patch_Pawn.cs" />
+    <Compile Include="ChildrenGoByFirstName\PawnNameTriple.cs" />
+    <Compile Include="CustomHybridXenotypes\Patch_PregnancyUtility.cs" />
     <Compile Include="DeathrestAutoWake\Patch_Gene_Deathrest.cs" />
     <Compile Include="DeathrestWakeupMessage\DeathrestUtility.cs" />
     <Compile Include="DeathrestWakeupMessage\Patch_Gene_Deathrest.cs" />
@@ -74,6 +84,11 @@
     <Compile Include="Dialog_Input.cs" />
     <Compile Include="DrugDeficiencyAlert\Alert_DrugDeficiencyComa.cs" />
     <Compile Include="DrugDeficiencyAlert\Alert_DrugDeficiency.cs" />
+    <Compile Include="ExostriderLostAllowsComplex\Comp_DatacoreAbandonable.cs" />
+    <Compile Include="GeneTraitsDontCancelIdentical\Patch_TraitSet.cs" />
+    <Compile Include="GrowthMomentChoiceColors\Patch_Dialog_GrowthMomentChoices.cs" />
+    <Compile Include="GrowthMomentChoiceColors\Patch_Widgets.cs" />
+    <Compile Include="GrowthMomentTraitSuppression\Patch_ChoiceLetter_GrowthMoment.cs" />
     <Compile Include="HemogenExtractionSpam\GoodwillUtility.cs" />
     <Compile Include="HemogenExtractionSpam\Patch_RecipeWorker.cs" />
     <Compile Include="MechAutoRepair\Patch_CompMechRepairable.cs" />
@@ -84,6 +99,7 @@
     <Compile Include="MechsOutsideRadius\Patch_MultiPawnGotoController.cs" />
     <Compile Include="PatchOperationReplaceIf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XenogermCreationForced\Patch_JobDriver_CreateXenogerm.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
