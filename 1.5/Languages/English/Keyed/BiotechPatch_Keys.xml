@@ -21,6 +21,9 @@
 	<BiotechPatch_ExostriderLostAllowsComplex>Bug fix: Abandoning the exostrider remains prevents mechanitor complex quest</BiotechPatch_ExostriderLostAllowsComplex>
 	<BiotechPatch_CustomHybridXenotypes>Bug fix: Children of a custom xenotype and another custom xenotype or baseliner are labeled as baseliner</BiotechPatch_CustomHybridXenotypes>
 	<BiotechPatch_BreastfeedingCanBeInterrupted>Breastfeeding can be interrupted if the lactator has more important things to do</BiotechPatch_BreastfeedingCanBeInterrupted>
+	<BiotechPatch_BirthNotCancelledWhenNotDowned>Bug fix: If a pawn giving birth is downed and then undowned during labor, the ritual is cancelled</BiotechPatch_BirthNotCancelledWhenNotDowned>
+	<BiotechPatch_BreastfeedAfterBirth>Doctor gives baby to parent to breastfeed after birth</BiotechPatch_BreastfeedAfterBirth>
+	<BiotechPatch_MoveBabyToSaferTempLater>Only move baby to safer temperature when it has temperature injury</BiotechPatch_MoveBabyToSaferTempLater>
 	<BiotechPatch_DrugDeficiencyAlertLabel>Drug deficiency</BiotechPatch_DrugDeficiencyAlertLabel>
 	<BiotechPatch_DrugDeficiencyAlertDesc>People are deficient in their life-sustaining drugs:\n{0}</BiotechPatch_DrugDeficiencyAlertDesc>
 	<BiotechPatch_DrugDeficiencyComaAlertLabel>Drug deficiency coma</BiotechPatch_DrugDeficiencyComaAlertLabel>

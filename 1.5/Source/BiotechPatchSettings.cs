@@ -25,6 +25,9 @@ namespace BiotechPatch
         public static bool ExostriderLostAllowsComplex = true;
         public static bool CustomHybridXenotypes = true;
         public static bool BreastfeedingCanBeInterrupted = true;
+        public static bool BirthNotCancelledWhenNotDowned = true;
+        public static bool BreastfeedAfterBirth = true;
+        public static bool MoveBabyToSaferTempLater = true;
 
         public static void DoSettingsWindowContents(Rect inRect)
         {
@@ -51,6 +54,9 @@ namespace BiotechPatch
             listingStandard.CheckboxLabeled("BiotechPatch_ExostriderLostAllowsComplex".Translate(), ref ExostriderLostAllowsComplex);
             listingStandard.CheckboxLabeled("BiotechPatch_CustomHybridXenotypes".Translate(), ref CustomHybridXenotypes);
             listingStandard.CheckboxLabeled("BiotechPatch_BreastfeedingCanBeInterrupted".Translate(), ref BreastfeedingCanBeInterrupted);
+            listingStandard.CheckboxLabeled("BiotechPatch_BirthNotCancelledWhenNotDowned".Translate(), ref BirthNotCancelledWhenNotDowned);
+            listingStandard.CheckboxLabeled("BiotechPatch_BreastfeedAfterBirth".Translate(), ref BreastfeedAfterBirth);
+            listingStandard.CheckboxLabeled("BiotechPatch_MoveBabyToSaferTempLater".Translate(), ref MoveBabyToSaferTempLater);
 
             listingStandard.End();
         }
@@ -76,6 +82,9 @@ namespace BiotechPatch
             Scribe_Values.Look(ref ExostriderLostAllowsComplex, "ExostriderLostAllowsComplex", true);
             Scribe_Values.Look(ref CustomHybridXenotypes, "CustomHybridXenotypes", true);
             Scribe_Values.Look(ref BreastfeedingCanBeInterrupted, "BreastfeedingCanBeInterrupted", true);
+            Scribe_Values.Look(ref BirthNotCancelledWhenNotDowned, "BirthNotCancelledWhenNotDowned", true);
+            Scribe_Values.Look(ref BreastfeedAfterBirth, "BreastfeedAfterBirth", true);
+            Scribe_Values.Look(ref MoveBabyToSaferTempLater, "MoveBabyToSaferTempLater", true);
         }
     }
 }
