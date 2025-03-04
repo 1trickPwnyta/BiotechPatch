@@ -95,6 +95,7 @@
     <Compile Include="HemogenExtractionSpam\GoodwillUtility.cs" />
     <Compile Include="HemogenExtractionSpam\Patch_RecipeWorker.cs" />
     <Compile Include="MechAutoRepair\Patch_CompMechRepairable.cs" />
+    <Compile Include="MechsControlledByCaravan\Patch_Pawn_MechanitorTracker.cs" />
     <Compile Include="MechsInColonistBar\ColonistBarUtility.cs" />
     <Compile Include="MechsInColonistBar\Patch_ColonistBar.cs" />
     <Compile Include="MechsOutsideRadius\CompatibilityPatch_AchtungMod_Colonist.cs" />
