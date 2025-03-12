@@ -98,6 +98,9 @@
     <Compile Include="MechsControlledByCaravan\Patch_Pawn_MechanitorTracker.cs" />
     <Compile Include="MechsInColonistBar\ColonistBarUtility.cs" />
     <Compile Include="MechsInColonistBar\Patch_ColonistBar.cs" />
+    <Compile Include="MechSmartWorkMode\JobGiver_SelfShutdown.cs" />
+    <Compile Include="MechSmartWorkMode\MechWorkModeDefOf.cs" />
+    <Compile Include="MechSmartWorkMode\Patch_MechanitorControlGroup.cs" />
     <Compile Include="MechsOutsideRadius\CompatibilityPatch_AchtungMod_Colonist.cs" />
     <Compile Include="MechsOutsideRadius\Patch_FloatMenuMakerMap.cs" />
     <Compile Include="MechsOutsideRadius\Patch_MultiPawnGotoController.cs" />

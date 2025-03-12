@@ -29,6 +29,7 @@ namespace BiotechPatch
         public static bool BreastfeedAfterBirth = true;
         public static bool MoveBabyToSaferTempLater = true;
         public static bool MechsControlledByCaravan = true;
+        public static bool MechSmartWorkMode = true;
 
         public static void DoSettingsWindowContents(Rect inRect)
         {
@@ -59,6 +60,7 @@ namespace BiotechPatch
             listingStandard.CheckboxLabeled("BiotechPatch_BreastfeedAfterBirth".Translate(), ref BreastfeedAfterBirth);
             listingStandard.CheckboxLabeled("BiotechPatch_MoveBabyToSaferTempLater".Translate(), ref MoveBabyToSaferTempLater);
             listingStandard.CheckboxLabeled("BiotechPatch_MechsControlledByCaravan".Translate(), ref MechsControlledByCaravan);
+            listingStandard.CheckboxLabeled("BiotechPatch_MechSmartWorkMode".Translate(), ref MechSmartWorkMode);
 
             listingStandard.End();
         }
@@ -88,6 +90,7 @@ namespace BiotechPatch
             Scribe_Values.Look(ref BreastfeedAfterBirth, "BreastfeedAfterBirth", true);
             Scribe_Values.Look(ref MoveBabyToSaferTempLater, "MoveBabyToSaferTempLater", true);
             Scribe_Values.Look(ref MechsControlledByCaravan, "MechsControlledByCaravan", true);
+            Scribe_Values.Look(ref MechSmartWorkMode, "MechSmartWorkMode", true);
         }
     }
 }
