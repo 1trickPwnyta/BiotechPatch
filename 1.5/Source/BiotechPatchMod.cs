@@ -27,7 +27,6 @@ namespace BiotechPatch
             }
             harmony.Patch(typeof(Gene_Deathrest).Constructor(new Type[] { }), null, typeof(Patch_Gene_Deathrest).Method(nameof(Patch_Gene_Deathrest.Postfix)));
             harmony.Patch(typeof(CompMechRepairable).Constructor(new Type[] { }), null, typeof(Patch_CompMechRepairable).Method(nameof(Patch_CompMechRepairable.Postfix)));
-            harmony.Patch(typeof(MechanitorControlGroup).Constructor(new[] { typeof(Pawn_MechanitorTracker) }), null, typeof(Patch_MechanitorControlGroup).Method(nameof(Patch_MechanitorControlGroup.Postfix)));
 
             Settings = GetSettings<BiotechPatchSettings>();
 
