@@ -1,6 +1,5 @@
 ﻿using BiotechPatch.DeathrestAutoWake;
 using BiotechPatch.MechAutoRepair;
-using BiotechPatch.MechSmartWorkMode;
 using BiotechPatch.MechsOutsideRadius;
 using HarmonyLib;
 using RimWorld;

@@ -29,13 +29,19 @@ namespace BiotechPatch
         public static bool BreastfeedAfterBirth = true;
         public static bool MoveBabyToSaferTempLater = true;
         public static bool MechsControlledByCaravan = true;
-        public static bool MechSmartWorkMode = true;
+        public static bool MechsCanSleepOnConduits = true;
+        public static bool WastepackDeteriorationMuted = true;
+
+        private static Vector2 scrollPosition;
+        private static float y;
 
         public static void DoSettingsWindowContents(Rect inRect)
         {
-            Listing_Standard listingStandard = new Listing_Standard();
+            Rect viewRect = new Rect(0f, 0f, inRect.width - 20f, y);
+            Widgets.BeginScrollView(inRect, ref scrollPosition, viewRect);
 
-            listingStandard.Begin(inRect);
+            Listing_Standard listingStandard = new Listing_Standard() { maxOneColumn = true };
+            listingStandard.Begin(viewRect);
 
             listingStandard.CheckboxLabeled("BiotechPatch_DeathrestAutoWake".Translate(), ref DeathrestAutoWake);
             listingStandard.CheckboxLabeled("BiotechPatch_MechsInColonistBar".Translate(), ref MechsInColonistBar);
@@ -60,9 +66,13 @@ namespace BiotechPatch
             listingStandard.CheckboxLabeled("BiotechPatch_BreastfeedAfterBirth".Translate(), ref BreastfeedAfterBirth);
             listingStandard.CheckboxLabeled("BiotechPatch_MoveBabyToSaferTempLater".Translate(), ref MoveBabyToSaferTempLater);
             listingStandard.CheckboxLabeled("BiotechPatch_MechsControlledByCaravan".Translate(), ref MechsControlledByCaravan);
-            listingStandard.CheckboxLabeled("BiotechPatch_MechSmartWorkMode".Translate(), ref MechSmartWorkMode);
+            listingStandard.CheckboxLabeled("BiotechPatch_MechsCanSleepOnConduits".Translate(), ref MechsCanSleepOnConduits);
+            listingStandard.CheckboxLabeled("BiotechPatch_WastepackDeteriorationMuted".Translate(), ref WastepackDeteriorationMuted);
 
+            y = listingStandard.CurHeight;
             listingStandard.End();
+
+            Widgets.EndScrollView();
         }
 
         public override void ExposeData()
@@ -90,7 +100,8 @@ namespace BiotechPatch
             Scribe_Values.Look(ref BreastfeedAfterBirth, "BreastfeedAfterBirth", true);
             Scribe_Values.Look(ref MoveBabyToSaferTempLater, "MoveBabyToSaferTempLater", true);
             Scribe_Values.Look(ref MechsControlledByCaravan, "MechsControlledByCaravan", true);
-            Scribe_Values.Look(ref MechSmartWorkMode, "MechSmartWorkMode", true);
+            Scribe_Values.Look(ref MechsCanSleepOnConduits, "MechsCanSleepOnConduits", true);
+            Scribe_Values.Look(ref WastepackDeteriorationMuted, "WastepackDeteriorationMuted", true);
         }
     }
 }
