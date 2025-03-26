@@ -27,6 +27,7 @@
 	<BiotechPatch_MechsControlledByCaravan>Mechanitors in caravans can control their mechs back home (command range still applies)</BiotechPatch_MechsControlledByCaravan>
 	<BiotechPatch_MechsCanSleepOnConduits>Allow mechs to self-charge on top of power conduits and other non-chair standable buildings</BiotechPatch_MechsCanSleepOnConduits>
 	<BiotechPatch_WastepackDeteriorationMuted>Don't show message when wastepacks deteriorate in non-home area storage</BiotechPatch_WastepackDeteriorationMuted>
+	<BiotechPatch_ResurrectedMechsRememberGroup>Dead mechs remember their control group after being resurrected</BiotechPatch_ResurrectedMechsRememberGroup>
 	<BiotechPatch_DrugDeficiencyAlertLabel>Drug deficiency</BiotechPatch_DrugDeficiencyAlertLabel>
 	<BiotechPatch_DrugDeficiencyAlertDesc>People are deficient in their life-sustaining drugs:\n{0}</BiotechPatch_DrugDeficiencyAlertDesc>
 	<BiotechPatch_DrugDeficiencyComaAlertLabel>Drug deficiency coma</BiotechPatch_DrugDeficiencyComaAlertLabel>

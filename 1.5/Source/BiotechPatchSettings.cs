@@ -31,6 +31,7 @@ namespace BiotechPatch
         public static bool MechsControlledByCaravan = true;
         public static bool MechsCanSleepOnConduits = true;
         public static bool WastepackDeteriorationMuted = true;
+        public static bool ResurrectedMechsRememberGroup = true;
 
         private static Vector2 scrollPosition;
         private static float y;
@@ -68,6 +69,7 @@ namespace BiotechPatch
             listingStandard.CheckboxLabeled("BiotechPatch_MechsControlledByCaravan".Translate(), ref MechsControlledByCaravan);
             listingStandard.CheckboxLabeled("BiotechPatch_MechsCanSleepOnConduits".Translate(), ref MechsCanSleepOnConduits);
             listingStandard.CheckboxLabeled("BiotechPatch_WastepackDeteriorationMuted".Translate(), ref WastepackDeteriorationMuted);
+            listingStandard.CheckboxLabeled("BiotechPatch_ResurrectedMechsRememberGroup".Translate(), ref ResurrectedMechsRememberGroup);
 
             y = listingStandard.CurHeight;
             listingStandard.End();
@@ -102,6 +104,7 @@ namespace BiotechPatch
             Scribe_Values.Look(ref MechsControlledByCaravan, "MechsControlledByCaravan", true);
             Scribe_Values.Look(ref MechsCanSleepOnConduits, "MechsCanSleepOnConduits", true);
             Scribe_Values.Look(ref WastepackDeteriorationMuted, "WastepackDeteriorationMuted", true);
+            Scribe_Values.Look(ref ResurrectedMechsRememberGroup, "ResurrectedMechsRememberGroup", true);
         }
     }
 }

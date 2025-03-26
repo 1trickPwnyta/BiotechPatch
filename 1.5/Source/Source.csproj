@@ -105,6 +105,10 @@
     <Compile Include="MoveBabyToSaferTempLater\Patch_ChildcareUtility.cs" />
     <Compile Include="PatchOperationReplaceIf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResurrectedMechsRememberGroup\DeadMechUtility.cs" />
+    <Compile Include="ResurrectedMechsRememberGroup\Patch_MechanitorControlGroup.cs" />
+    <Compile Include="ResurrectedMechsRememberGroup\Patch_Pawn.cs" />
+    <Compile Include="ResurrectedMechsRememberGroup\Patch_Pawn_MechanitorTracker.cs" />
     <Compile Include="WastepackDeteriorationMuted\Patch_SteadyEnvironmentEffects.cs" />
     <Compile Include="XenogermCreationForced\Patch_JobDriver_CreateXenogerm.cs" />
   </ItemGroup>
