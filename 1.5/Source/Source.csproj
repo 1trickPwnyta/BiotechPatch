@@ -101,6 +101,7 @@
     <Compile Include="MechsInColonistBar\Patch_ColonistBar.cs" />
     <Compile Include="MechsOutsideRadius\CompatibilityPatch_AchtungMod_Colonist.cs" />
     <Compile Include="MechsOutsideRadius\Patch_FloatMenuMakerMap.cs" />
+    <Compile Include="MechsOutsideRadius\Patch_FloatMenuUtility.cs" />
     <Compile Include="MechsOutsideRadius\Patch_MultiPawnGotoController.cs" />
     <Compile Include="MoveBabyToSaferTempLater\Patch_ChildcareUtility.cs" />
     <Compile Include="PatchOperationReplaceIf.cs" />
