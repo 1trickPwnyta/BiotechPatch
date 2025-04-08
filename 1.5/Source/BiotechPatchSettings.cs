@@ -33,6 +33,7 @@ namespace BiotechPatch
         public static bool WastepackDeteriorationMuted = true;
         public static bool ResurrectedMechsRememberGroup = true;
         public static bool MechEnergyDepletedAlert = true;
+        public static bool MechTaskPrioritization = true;
 
         private static Vector2 scrollPosition;
         private static float y;
@@ -72,6 +73,7 @@ namespace BiotechPatch
             listingStandard.CheckboxLabeled("BiotechPatch_WastepackDeteriorationMuted".Translate(), ref WastepackDeteriorationMuted);
             listingStandard.CheckboxLabeled("BiotechPatch_ResurrectedMechsRememberGroup".Translate(), ref ResurrectedMechsRememberGroup);
             listingStandard.CheckboxLabeled("BiotechPatch_MechEnergyDepletedAlert".Translate(), ref MechEnergyDepletedAlert);
+            listingStandard.CheckboxLabeled("BiotechPatch_MechTaskPrioritization".Translate(), ref MechTaskPrioritization);
 
             y = listingStandard.CurHeight;
             listingStandard.End();
@@ -108,6 +110,7 @@ namespace BiotechPatch
             Scribe_Values.Look(ref WastepackDeteriorationMuted, "WastepackDeteriorationMuted", true);
             Scribe_Values.Look(ref ResurrectedMechsRememberGroup, "ResurrectedMechsRememberGroup", true);
             Scribe_Values.Look(ref MechEnergyDepletedAlert, "MechEnergyDepletedAlert", true);
+            Scribe_Values.Look(ref MechTaskPrioritization, "MechTaskPrioritization", true);
         }
     }
 }
