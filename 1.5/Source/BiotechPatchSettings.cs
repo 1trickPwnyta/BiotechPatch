@@ -32,6 +32,7 @@ namespace BiotechPatch
         public static bool MechsCanSleepOnConduits = true;
         public static bool WastepackDeteriorationMuted = true;
         public static bool ResurrectedMechsRememberGroup = true;
+        public static bool MechEnergyDepletedAlert = true;
 
         private static Vector2 scrollPosition;
         private static float y;
@@ -70,6 +71,7 @@ namespace BiotechPatch
             listingStandard.CheckboxLabeled("BiotechPatch_MechsCanSleepOnConduits".Translate(), ref MechsCanSleepOnConduits);
             listingStandard.CheckboxLabeled("BiotechPatch_WastepackDeteriorationMuted".Translate(), ref WastepackDeteriorationMuted);
             listingStandard.CheckboxLabeled("BiotechPatch_ResurrectedMechsRememberGroup".Translate(), ref ResurrectedMechsRememberGroup);
+            listingStandard.CheckboxLabeled("BiotechPatch_MechEnergyDepletedAlert".Translate(), ref MechEnergyDepletedAlert);
 
             y = listingStandard.CurHeight;
             listingStandard.End();
@@ -105,6 +107,7 @@ namespace BiotechPatch
             Scribe_Values.Look(ref MechsCanSleepOnConduits, "MechsCanSleepOnConduits", true);
             Scribe_Values.Look(ref WastepackDeteriorationMuted, "WastepackDeteriorationMuted", true);
             Scribe_Values.Look(ref ResurrectedMechsRememberGroup, "ResurrectedMechsRememberGroup", true);
+            Scribe_Values.Look(ref MechEnergyDepletedAlert, "MechEnergyDepletedAlert", true);
         }
     }
 }

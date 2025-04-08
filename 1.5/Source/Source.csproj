@@ -95,6 +95,8 @@
     <Compile Include="HemogenExtractionSpam\GoodwillUtility.cs" />
     <Compile Include="HemogenExtractionSpam\Patch_RecipeWorker.cs" />
     <Compile Include="MechAutoRepair\Patch_CompMechRepairable.cs" />
+    <Compile Include="MechEnergyDepletedAlert\Alert_MechEnergyDepleted.cs" />
+    <Compile Include="MechEnergyDepletedAlert\Patch_PawnUIOverlay.cs" />
     <Compile Include="MechsCanSleepOnConduits\Patch_RCellFinder.cs" />
     <Compile Include="MechsControlledByCaravan\Patch_Pawn_MechanitorTracker.cs" />
     <Compile Include="MechsInColonistBar\ColonistBarUtility.cs" />
