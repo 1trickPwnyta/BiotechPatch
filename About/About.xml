@@ -3,14 +3,51 @@
 	<name>1trickPwnyta's Biotech Patch</name>
 	<author>1trickPwnyta</author>
 	<packageId>biotechpatch.1trickPwnyta</packageId>
+	<modVersion>1.0.0</modVersion>
 	<supportedVersions>
 		<li>1.5</li>
 	</supportedVersions>
 	<description>
-This mod makes a handful of small tweaks to the Biotech DLC that are intended to make the game a bit more enjoyable without changing the gameplay too much.
+This mod makes a handful of small tweaks to the Biotech DLC that are intended to make the game a bit more enjoyable without changing the gameplay too much. Each tweak can be toggled on or off in the mod settings.
 
-Full list of tweaks:
+=Children=
+- The Child Labor: Encouraged precept requires children to be scheduled for at least 4 consecutive hours of work instead of requiring no scheduled recreation, since children don't recreate anyway.
+- The text for the right-click command "Prioritize growing growth vat" is changed to "Prioritize loading growth vat".
+- Children will not automatically gain a weird nickname like "Man" or "Dude" or "Bicep" at growth moments.
+- Children are called by their first names by default, instead of sometimes going by their last names.
+- Growth moment dialog trait/passion choices are colored. Traits are gray if they would be suppressed by a gene. Passions are red if they would conflict with a gene (such as Awful Mining).
+- Bug fix: Traits selected at growth moment are unsuppressed by genes that should suppress them (pyrophobia/pyromaniac).
+- Lactators can stop breastfeeding before the baby is full if something more important comes up (such as their own needs not being met).
+- Bug fix: If a pawn giving birth is downed and then undowned during labor (such as labor going from debilitating to mild), the ritual is cancelled.
+- Doctors will automatically give the baby to the parent to breastfeed after delivery.
+- Pawns won't move babies to a safer temperature until the baby has at least initial heatstroke/hypothermia.
 
+=Genetics=
+- The auto-wake setting is enabled by default for deathresters.
+- A message appears at the top of the screen when a deathrester wakes up.
+- The Health tab can be used to order xenogerm implantation even for xenogerms that are forbidden to the patient.
+- An alert appears on the right side of the screen when a pawn is deficient in a drug they need in order to survive because of their genes.
+- When ordering a pawn to priotitize creating a xenogerm, they will do it until finished instead of getting bored and leaving after a few seconds.
+- Bug fix: Same xenogene/endogene can both cancel each other out if they give the same trait.
+- Bug fix: Children of a custom xenotype and another custom xenotype or baseliner are labeled as baseliner.
+
+=Mechanoids=
+- Colony mechanoids are shown in the colonist bar.
+- Mechs can be ordered to move outside the mechanitor's command range, since zones could be used to accomplish this anyway.
+- Friendly mechs are assigned auto-repair be default.
+- Bug fix: Abandoning the exostrider remains prevents mechanitor complex quest.
+- Friendly mechs can be controlled even when their mechanitor is on a caravan, since the mechanitor doesn't have to be on the same map anyway.
+- Friendly mechs can self-charge on top of power conduits and other non-chair standable buildings.
+- Friendly mechs remember their control group assignment upon being resurrected.
+- Friendly mechs with no energy who need to be carried to a recharger use a different symbol (power outage symbol vs. self charge symbol) and get an alert on the right side of the screen.
+- Friendly mechs can be given right-click orders to prioritize specific tasks without the need for dev mode, both while undrafted and drafted, similar to humans.
+
+=Miscellaneous=
+- No more message spam when extracting hemogen from a prisoner of a hostile faction.
+- No more message spam when wastepacks deteriorate outside of the home area.
+
+=== Credits ===
+Mod icon: twitter.com/mouse_draws
 	</description>
 	<url>https://github.com/1trickPwnyta/BiotechPatch</url>
 	<modDependencies>

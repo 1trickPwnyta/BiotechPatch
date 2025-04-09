@@ -43,42 +43,63 @@ namespace BiotechPatch
             Rect viewRect = new Rect(0f, 0f, inRect.width - 20f, y);
             Widgets.BeginScrollView(inRect, ref scrollPosition, viewRect);
 
-            Listing_Standard listingStandard = new Listing_Standard() { maxOneColumn = true };
-            listingStandard.Begin(viewRect);
+            Listing_Standard listing = new Listing_Standard() { maxOneColumn = true };
+            listing.Begin(viewRect);
 
-            listingStandard.CheckboxLabeled("BiotechPatch_DeathrestAutoWake".Translate(), ref DeathrestAutoWake);
-            listingStandard.CheckboxLabeled("BiotechPatch_MechsInColonistBar".Translate(), ref MechsInColonistBar);
-            listingStandard.CheckboxLabeled("BiotechPatch_MechsOutsideRadius".Translate(), ref MechsOutsideRadius);
-            listingStandard.CheckboxLabeled("BiotechPatch_HemogenExtractionSpam".Translate(), ref HemogenExtractionSpam);
-            listingStandard.CheckboxLabeled("BiotechPatch_DeathrestWakeupMessage".Translate(), ref DeathrestWakeupMessage);
-            listingStandard.CheckboxLabeled("BiotechPatch_MechAutoRepair".Translate(), ref MechAutoRepair);
-            listingStandard.CheckboxLabeled("BiotechPatch_ChildLaborEncouraged".Translate() + " " + "BiotechPatch_RestartRequired".Translate(), ref ChildLaborEncouraged);
-            listingStandard.CheckboxLabeled("BiotechPatch_AllowForbiddenXenogermImplantation".Translate(), ref AllowForbiddenXenogermImplantation);
-            listingStandard.CheckboxLabeled("BiotechPatch_DrugDeficiencyAlert".Translate(), ref DrugDeficiencyAlert);
-            listingStandard.CheckboxLabeled("BiotechPatch_LoadGrowthVats".Translate() + " " + "BiotechPatch_RestartRequired".Translate(), ref LoadGrowthVats);
-            listingStandard.CheckboxLabeled("BiotechPatch_AutoChildNicknamesDisabled".Translate(), ref AutoChildNicknamesDisabled);
-            listingStandard.CheckboxLabeled("BiotechPatch_ChildrenGoByFirstName".Translate(), ref ChildrenGoByFirstName);
-            listingStandard.CheckboxLabeled("BiotechPatch_XenogermCreationForced".Translate(), ref XenogermCreationForced);
-            listingStandard.CheckboxLabeled("BiotechPatch_GeneTraitsDontCancelIdentical".Translate(), ref GeneTraitsDontCancelIdentical);
-            listingStandard.CheckboxLabeled("BiotechPatch_GrowthMomentChoiceColors".Translate(), ref GrowthMomentChoiceColors);
-            listingStandard.CheckboxLabeled("BiotechPatch_GrowthMomentTraitSuppression".Translate(), ref GrowthMomentTraitSuppression);
-            listingStandard.CheckboxLabeled("BiotechPatch_ExostriderLostAllowsComplex".Translate(), ref ExostriderLostAllowsComplex);
-            listingStandard.CheckboxLabeled("BiotechPatch_CustomHybridXenotypes".Translate(), ref CustomHybridXenotypes);
-            listingStandard.CheckboxLabeled("BiotechPatch_BreastfeedingCanBeInterrupted".Translate(), ref BreastfeedingCanBeInterrupted);
-            listingStandard.CheckboxLabeled("BiotechPatch_BirthNotCancelledWhenNotDowned".Translate(), ref BirthNotCancelledWhenNotDowned);
-            listingStandard.CheckboxLabeled("BiotechPatch_BreastfeedAfterBirth".Translate(), ref BreastfeedAfterBirth);
-            listingStandard.CheckboxLabeled("BiotechPatch_MoveBabyToSaferTempLater".Translate(), ref MoveBabyToSaferTempLater);
-            listingStandard.CheckboxLabeled("BiotechPatch_MechsControlledByCaravan".Translate(), ref MechsControlledByCaravan);
-            listingStandard.CheckboxLabeled("BiotechPatch_MechsCanSleepOnConduits".Translate(), ref MechsCanSleepOnConduits);
-            listingStandard.CheckboxLabeled("BiotechPatch_WastepackDeteriorationMuted".Translate(), ref WastepackDeteriorationMuted);
-            listingStandard.CheckboxLabeled("BiotechPatch_ResurrectedMechsRememberGroup".Translate(), ref ResurrectedMechsRememberGroup);
-            listingStandard.CheckboxLabeled("BiotechPatch_MechEnergyDepletedAlert".Translate(), ref MechEnergyDepletedAlert);
-            listingStandard.CheckboxLabeled("BiotechPatch_MechTaskPrioritization".Translate(), ref MechTaskPrioritization);
+            DoHeader(listing, "BiotechPatch_Children");
+            listing.CheckboxLabeled("BiotechPatch_ChildLaborEncouraged".Translate() + " " + "BiotechPatch_RestartRequired".Translate(), ref ChildLaborEncouraged);
+            listing.CheckboxLabeled("BiotechPatch_LoadGrowthVats".Translate() + " " + "BiotechPatch_RestartRequired".Translate(), ref LoadGrowthVats);
+            listing.CheckboxLabeled("BiotechPatch_AutoChildNicknamesDisabled".Translate(), ref AutoChildNicknamesDisabled);
+            listing.CheckboxLabeled("BiotechPatch_ChildrenGoByFirstName".Translate(), ref ChildrenGoByFirstName);
+            listing.CheckboxLabeled("BiotechPatch_GrowthMomentChoiceColors".Translate(), ref GrowthMomentChoiceColors);
+            listing.CheckboxLabeled("BiotechPatch_GrowthMomentTraitSuppression".Translate(), ref GrowthMomentTraitSuppression);
+            listing.CheckboxLabeled("BiotechPatch_BreastfeedingCanBeInterrupted".Translate(), ref BreastfeedingCanBeInterrupted);
+            listing.CheckboxLabeled("BiotechPatch_BirthNotCancelledWhenNotDowned".Translate(), ref BirthNotCancelledWhenNotDowned);
+            listing.CheckboxLabeled("BiotechPatch_BreastfeedAfterBirth".Translate(), ref BreastfeedAfterBirth);
+            listing.CheckboxLabeled("BiotechPatch_MoveBabyToSaferTempLater".Translate(), ref MoveBabyToSaferTempLater);
 
-            y = listingStandard.CurHeight;
-            listingStandard.End();
+            listing.Gap();
+
+            DoHeader(listing, "BiotechPatch_Genetics");
+            listing.CheckboxLabeled("BiotechPatch_DeathrestAutoWake".Translate(), ref DeathrestAutoWake);
+            listing.CheckboxLabeled("BiotechPatch_DeathrestWakeupMessage".Translate(), ref DeathrestWakeupMessage);
+            listing.CheckboxLabeled("BiotechPatch_AllowForbiddenXenogermImplantation".Translate(), ref AllowForbiddenXenogermImplantation);
+            listing.CheckboxLabeled("BiotechPatch_DrugDeficiencyAlert".Translate(), ref DrugDeficiencyAlert);
+            listing.CheckboxLabeled("BiotechPatch_XenogermCreationForced".Translate(), ref XenogermCreationForced);
+            listing.CheckboxLabeled("BiotechPatch_GeneTraitsDontCancelIdentical".Translate(), ref GeneTraitsDontCancelIdentical);
+            listing.CheckboxLabeled("BiotechPatch_CustomHybridXenotypes".Translate(), ref CustomHybridXenotypes);
+
+            listing.Gap();
+
+            DoHeader(listing, "BiotechPatch_Mechanoids");
+            listing.CheckboxLabeled("BiotechPatch_MechsInColonistBar".Translate(), ref MechsInColonistBar);
+            listing.CheckboxLabeled("BiotechPatch_MechsOutsideRadius".Translate(), ref MechsOutsideRadius);
+            listing.CheckboxLabeled("BiotechPatch_MechAutoRepair".Translate(), ref MechAutoRepair);
+            listing.CheckboxLabeled("BiotechPatch_ExostriderLostAllowsComplex".Translate(), ref ExostriderLostAllowsComplex);
+            listing.CheckboxLabeled("BiotechPatch_MechsControlledByCaravan".Translate(), ref MechsControlledByCaravan);
+            listing.CheckboxLabeled("BiotechPatch_MechsCanSleepOnConduits".Translate(), ref MechsCanSleepOnConduits);
+            listing.CheckboxLabeled("BiotechPatch_ResurrectedMechsRememberGroup".Translate(), ref ResurrectedMechsRememberGroup);
+            listing.CheckboxLabeled("BiotechPatch_MechEnergyDepletedAlert".Translate(), ref MechEnergyDepletedAlert);
+            listing.CheckboxLabeled("BiotechPatch_MechTaskPrioritization".Translate(), ref MechTaskPrioritization);
+
+            listing.Gap();
+
+            DoHeader(listing, "BiotechPatch_Misc");
+            listing.CheckboxLabeled("BiotechPatch_HemogenExtractionSpam".Translate(), ref HemogenExtractionSpam);
+            listing.CheckboxLabeled("BiotechPatch_WastepackDeteriorationMuted".Translate(), ref WastepackDeteriorationMuted);
+
+            y = listing.CurHeight;
+            listing.End();
 
             Widgets.EndScrollView();
+        }
+
+        private static void DoHeader(Listing_Standard listing, string key)
+        {
+            Text.Font = GameFont.Medium;
+            listing.Label(key.Translate());
+            listing.GapLine();
+            Text.Font = GameFont.Small;
         }
 
         public override void ExposeData()

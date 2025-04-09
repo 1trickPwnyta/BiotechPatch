@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
+	<BiotechPatch_Children>Children</BiotechPatch_Children>
+	<BiotechPatch_Genetics>Genetics</BiotechPatch_Genetics>
+	<BiotechPatch_Mechanoids>Mechanoids</BiotechPatch_Mechanoids>
+	<BiotechPatch_Misc>Miscellaneous</BiotechPatch_Misc>
 	<BiotechPatch_WokeFromDeathrest>{PAWN_nameDef} has finished deathresting.</BiotechPatch_WokeFromDeathrest>
 	<BiotechPatch_RestartRequired>(requires restart)</BiotechPatch_RestartRequired>
 	<BiotechPatch_DeathrestAutoWake>Automatically enable auto-wake for deathresting pawns</BiotechPatch_DeathrestAutoWake>
