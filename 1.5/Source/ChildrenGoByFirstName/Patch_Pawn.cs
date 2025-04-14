@@ -4,14 +4,14 @@ using Verse;
 namespace BiotechPatch.ChildrenGoByFirstName
 {
     [HarmonyPatch(typeof(Pawn))]
-    [HarmonyPatch("get_Name")]
+    [HarmonyPatch("set_Name")]
     public static class Patch_Pawn
     {
-        public static void Postfix(Pawn __instance, ref Name __result)
+        public static void Postfix(Pawn __instance)
         {
-            if (__result is NameTriple)
+            if (__instance.Name is NameTriple name)
             {
-                __result = new PawnNameTriple(__instance, (NameTriple)__result);
+                name.SetPawn(__instance);
             }
         }
     }

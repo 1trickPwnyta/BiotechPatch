@@ -3,7 +3,7 @@
 	<name>1trickPwnyta's Biotech Patch</name>
 	<author>1trickPwnyta</author>
 	<packageId>biotechpatch.1trickPwnyta</packageId>
-	<modVersion>1.0.0</modVersion>
+	<modVersion>1.0.1</modVersion>
 	<supportedVersions>
 		<li>1.5</li>
 	</supportedVersions>
@@ -45,6 +45,9 @@ This mod makes a handful of small tweaks to the Biotech DLC that are intended to
 =Miscellaneous=
 - No more message spam when extracting hemogen from a prisoner of a hostile faction.
 - No more message spam when wastepacks deteriorate outside of the home area.
+
+=== Updates ===
+04/13/2025: Fix conflict with Character Editor
 
 === Credits ===
 Mod icon: twitter.com/mouse_draws

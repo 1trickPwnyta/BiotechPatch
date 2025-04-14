@@ -74,7 +74,8 @@
     <Compile Include="BreastfeedingCanBeInterrupted\Patch_JobGiver_Autofeed.cs" />
     <Compile Include="BreastfeedingCanBeInterrupted\WorkGiver_BreastfeedCarried.cs" />
     <Compile Include="ChildLaborEncouraged\ThoughtWorker_Precept_ChildLabor_ChildNotAssignedWork.cs" />
-    <Compile Include="ChildrenGoByFirstName\Patch_Dialog_NamePawn.cs" />
+    <Compile Include="ChildrenGoByFirstName\GameComponent_ChildrenGoByFirstName.cs" />
+    <Compile Include="ChildrenGoByFirstName\NameUtility.cs" />
     <Compile Include="ChildrenGoByFirstName\Patch_NameTriple.cs" />
     <Compile Include="ChildrenGoByFirstName\Patch_Pawn.cs" />
     <Compile Include="ChildrenGoByFirstName\PawnNameTriple.cs" />

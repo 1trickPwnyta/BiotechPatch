@@ -2,6 +2,7 @@
 
 namespace BiotechPatch.ChildrenGoByFirstName
 {
+    // Unused, kept only for backward compatibility
     public class PawnNameTriple : NameTriple
     {
         public Pawn pawn;
