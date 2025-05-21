@@ -3,7 +3,7 @@
 	<name>1trickPwnyta's Biotech Patch</name>
 	<author>1trickPwnyta</author>
 	<packageId>biotechpatch.1trickPwnyta</packageId>
-	<modVersion>1.0.1</modVersion>
+	<modVersion>1.0.2</modVersion>
 	<supportedVersions>
 		<li>1.5</li>
 	</supportedVersions>
@@ -47,6 +47,7 @@ This mod makes a handful of small tweaks to the Biotech DLC that are intended to
 - No more message spam when wastepacks deteriorate outside of the home area.
 
 === Updates ===
+05/21/2025: Fix conflict with Pawn Name Variety, fix pawn name errors when reloading saves
 04/13/2025: Fix conflict with Character Editor
 
 === Credits ===
