@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="BiotechPatch.PatchOperationReplaceIf">
+		<xpath>/Defs/WorkGiverDef[defName="CarryToGrowthVat"]/verb</xpath>
+		<value>
+			<verb>load</verb>
+		</value>
+		<setting>LoadGrowthVats</setting>
+	</Operation>
+	<Operation Class="BiotechPatch.PatchOperationReplaceIf">
+		<xpath>/Defs/WorkGiverDef[defName="CarryToGrowthVat"]/gerund</xpath>
+		<value>
+			<gerund>loading</gerund>
+		</value>
+		<setting>LoadGrowthVats</setting>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkGiverDef[defName="BreastfeedBaby"]/giverClass</xpath>
+		<value>
+			<giverClass>BiotechPatch.BreastfeedingCanBeInterrupted.WorkGiver_BreastfeedCarried</giverClass>
+		</value>
+	</Operation>
+</Patch>

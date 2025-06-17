@@ -19,7 +19,6 @@ This mod makes a handful of small tweaks to the Biotech DLC that are intended to
 - Bug fix: Traits selected at growth moment are unsuppressed by genes that should suppress them (pyrophobia/pyromaniac).
 - Lactators can stop breastfeeding before the baby is full if something more important comes up (such as their own needs not being met).
 - Bug fix: If a pawn giving birth is downed and then undowned during labor (such as labor going from debilitating to mild), the ritual is cancelled.
-- Doctors will automatically give the baby to the parent to breastfeed after delivery.
 - Pawns won't move babies to a safer temperature until the baby has at least initial heatstroke/hypothermia.
 
 =Genetics=
@@ -40,7 +39,7 @@ This mod makes a handful of small tweaks to the Biotech DLC that are intended to
 - Friendly mechs can self-charge on top of power conduits and other non-chair standable buildings.
 - Friendly mechs remember their control group assignment upon being resurrected.
 - Friendly mechs with no energy who need to be carried to a recharger use a different symbol (power outage symbol vs. self charge symbol) and get an alert on the right side of the screen.
-- Friendly mechs can be given right-click orders to prioritize specific tasks without the need for dev mode, both while undrafted and drafted, similar to humans.
+- Bug fix: Constructoids cannot be ordered to repair buildings such as doors while drafted.
 
 =Miscellaneous=
 - No more message spam when extracting hemogen from a prisoner of a hostile faction.

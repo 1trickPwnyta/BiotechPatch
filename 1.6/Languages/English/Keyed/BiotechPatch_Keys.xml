@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<BiotechPatch_Children>Children</BiotechPatch_Children>
+	<BiotechPatch_Genetics>Genetics</BiotechPatch_Genetics>
+	<BiotechPatch_Mechanoids>Mechanoids</BiotechPatch_Mechanoids>
+	<BiotechPatch_Misc>Miscellaneous</BiotechPatch_Misc>
+	<BiotechPatch_WokeFromDeathrest>{PAWN_nameDef} has finished deathresting.</BiotechPatch_WokeFromDeathrest>
+	<BiotechPatch_RestartRequired>(requires restart)</BiotechPatch_RestartRequired>
+	<BiotechPatch_DeathrestAutoWake>Automatically enable auto-wake for deathresting pawns</BiotechPatch_DeathrestAutoWake>
+	<BiotechPatch_MechsInColonistBar>Show mechs in colonist bar</BiotechPatch_MechsInColonistBar>
+	<BiotechPatch_MechsOutsideRadius>Allow moving mechs and ordering ranged attacks outside the mechanitor control radius</BiotechPatch_MechsOutsideRadius>
+	<BiotechPatch_HemogenExtractionSpam>Disable message when extracting hemogen from hostile faction</BiotechPatch_HemogenExtractionSpam>
+	<BiotechPatch_DeathrestWakeupMessage>Show message when deathrester auto-wakes</BiotechPatch_DeathrestWakeupMessage>
+	<BiotechPatch_MechAutoRepair>Automatically enable auto-repair for mechs</BiotechPatch_MechAutoRepair>
+	<BiotechPatch_ChildLaborEncouraged>Child labor: encouraged requires scheduled work</BiotechPatch_ChildLaborEncouraged>
+	<BiotechPatch_AllowForbiddenXenogermImplantation>Allow xenogerm implantation via health tab for xenogerms that are forbidden</BiotechPatch_AllowForbiddenXenogermImplantation>
+	<BiotechPatch_DrugDeficiencyAlert>Show alert for drug deficiency due to genes</BiotechPatch_DrugDeficiencyAlert>
+	<BiotechPatch_LoadGrowthVats>Change text "growing" growth vats to "loading" growth vats</BiotechPatch_LoadGrowthVats>
+	<BiotechPatch_AutoChildNicknamesDisabled>Disable auto-nicknaming of children at growth moments</BiotechPatch_AutoChildNicknamesDisabled>
+	<BiotechPatch_ChildrenGoByFirstName>Children are called by their first name by default</BiotechPatch_ChildrenGoByFirstName>
+	<BiotechPatch_XenogermCreationForced>Prioritizing creating a xenogerm won't be interrupted at the worker's whimsy</BiotechPatch_XenogermCreationForced>
+	<BiotechPatch_GeneTraitsDontCancelIdentical>Bug fix: Same xenogene/endogene can both cancel each other out</BiotechPatch_GeneTraitsDontCancelIdentical>
+	<BiotechPatch_GrowthMomentChoiceColors>Show colored trait/passion choices for growth moments based on utility</BiotechPatch_GrowthMomentChoiceColors>
+	<BiotechPatch_GrowthMomentTraitSuppression>Bug fix: Traits selected at growth moment are unsuppressed by genes that should suppress them</BiotechPatch_GrowthMomentTraitSuppression>
+	<BiotechPatch_ExostriderLostAllowsComplex>Bug fix: Abandoning the exostrider remains prevents mechanitor complex quest</BiotechPatch_ExostriderLostAllowsComplex>
+	<BiotechPatch_CustomHybridXenotypes>Bug fix: Children of a custom xenotype and another custom xenotype or baseliner are labeled as baseliner</BiotechPatch_CustomHybridXenotypes>
+	<BiotechPatch_BreastfeedingCanBeInterrupted>Breastfeeding can be interrupted if the lactator has more important things to do</BiotechPatch_BreastfeedingCanBeInterrupted>
+	<BiotechPatch_BirthNotCancelledWhenNotDowned>Bug fix: If a pawn giving birth is downed and then undowned during labor, the ritual is cancelled</BiotechPatch_BirthNotCancelledWhenNotDowned>
+	<BiotechPatch_MoveBabyToSaferTempLater>Only move baby to safer temperature when it has temperature injury</BiotechPatch_MoveBabyToSaferTempLater>
+	<BiotechPatch_MechsControlledByCaravan>Mechanitors in caravans can control their mechs back home (command range still applies)</BiotechPatch_MechsControlledByCaravan>
+	<BiotechPatch_MechsCanSleepOnConduits>Allow mechs to self-charge on top of power conduits and other non-chair standable buildings</BiotechPatch_MechsCanSleepOnConduits>
+	<BiotechPatch_WastepackDeteriorationMuted>Don't show message when wastepacks deteriorate in non-home area storage</BiotechPatch_WastepackDeteriorationMuted>
+	<BiotechPatch_ResurrectedMechsRememberGroup>Dead mechs remember their control group after being resurrected</BiotechPatch_ResurrectedMechsRememberGroup>
+	<BiotechPatch_MechEnergyDepletedAlert>Make mechs with no energy more noticeable (alert + different icon)</BiotechPatch_MechEnergyDepletedAlert>
+	<BiotechPatch_MechTaskPrioritization>Bug fix: Constructoids can't repair buildings while drafted</BiotechPatch_MechTaskPrioritization>
+	<BiotechPatch_DrugDeficiencyAlertLabel>Drug deficiency</BiotechPatch_DrugDeficiencyAlertLabel>
+	<BiotechPatch_DrugDeficiencyAlertDesc>People are deficient in their life-sustaining drugs:\n{0}</BiotechPatch_DrugDeficiencyAlertDesc>
+	<BiotechPatch_DrugDeficiencyComaAlertLabel>Drug deficiency coma</BiotechPatch_DrugDeficiencyComaAlertLabel>
+	<BiotechPatch_DrugDeficiencyComaAlertDesc>Someone is in a coma due to a drug deficiency:\n{0}\n\nIf they do not get the necessary drugs, they will eventually die.</BiotechPatch_DrugDeficiencyComaAlertDesc>
+	<BiotechPatch_InputIsInvalid>Please enter valid input.</BiotechPatch_InputIsInvalid>
+	<BiotechPatch_SuppressedBy>Suppressed by</BiotechPatch_SuppressedBy>
+	<BiotechPatch_AlertMechEnergyDepleted>Mech energy depleted</BiotechPatch_AlertMechEnergyDepleted>
+	<BiotechPatch_AlertMechEnergyDepletedDesc>One or more of your colony mechanoids have completely depleted their energy and must be carried to a recharger.</BiotechPatch_AlertMechEnergyDepletedDesc>
+</LanguageData>
