@@ -33,6 +33,7 @@
 	<BiotechPatch_ResurrectedMechsRememberGroup>Dead mechs remember their control group after being resurrected</BiotechPatch_ResurrectedMechsRememberGroup>
 	<BiotechPatch_MechEnergyDepletedAlert>Make mechs with no energy more noticeable (alert + different icon)</BiotechPatch_MechEnergyDepletedAlert>
 	<BiotechPatch_MechTaskPrioritization>Bug fix: Constructoids can't repair buildings while drafted</BiotechPatch_MechTaskPrioritization>
+	<BiotechPatch_WebbedPhalangesCanBeWet>Pawns with webbed phalanges don't care about being soaking wet</BiotechPatch_WebbedPhalangesCanBeWet>
 	<BiotechPatch_DrugDeficiencyAlertLabel>Drug deficiency</BiotechPatch_DrugDeficiencyAlertLabel>
 	<BiotechPatch_DrugDeficiencyAlertDesc>People are deficient in their life-sustaining drugs:\n{0}</BiotechPatch_DrugDeficiencyAlertDesc>
 	<BiotechPatch_DrugDeficiencyComaAlertLabel>Drug deficiency coma</BiotechPatch_DrugDeficiencyComaAlertLabel>

@@ -33,6 +33,7 @@ namespace BiotechPatch
         public static bool ResurrectedMechsRememberGroup = true;
         public static bool MechEnergyDepletedAlert = true;
         public static bool MechTaskPrioritization = true;
+        public static bool WebbedPhalangesCanBeWet = true;
 
         private static Vector2 scrollPosition;
         private static float y;
@@ -61,6 +62,7 @@ namespace BiotechPatch
             DoHeader(listing, "BiotechPatch_Genetics");
             listing.CheckboxLabeled("BiotechPatch_DeathrestAutoWake".Translate(), ref DeathrestAutoWake);
             listing.CheckboxLabeled("BiotechPatch_DeathrestWakeupMessage".Translate(), ref DeathrestWakeupMessage);
+            listing.CheckboxLabeled("BiotechPatch_WebbedPhalangesCanBeWet".Translate() + " " + "BiotechPatch_RestartRequired".Translate(), ref WebbedPhalangesCanBeWet);
             listing.CheckboxLabeled("BiotechPatch_AllowForbiddenXenogermImplantation".Translate(), ref AllowForbiddenXenogermImplantation);
             listing.CheckboxLabeled("BiotechPatch_DrugDeficiencyAlert".Translate(), ref DrugDeficiencyAlert);
             listing.CheckboxLabeled("BiotechPatch_XenogermCreationForced".Translate(), ref XenogermCreationForced);
@@ -129,6 +131,7 @@ namespace BiotechPatch
             Scribe_Values.Look(ref ResurrectedMechsRememberGroup, "ResurrectedMechsRememberGroup", true);
             Scribe_Values.Look(ref MechEnergyDepletedAlert, "MechEnergyDepletedAlert", true);
             Scribe_Values.Look(ref MechTaskPrioritization, "MechTaskPrioritization", true);
+            Scribe_Values.Look(ref WebbedPhalangesCanBeWet, "WebbedPhalangesCanBeWet", true);
         }
     }
 }

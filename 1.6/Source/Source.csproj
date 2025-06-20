@@ -107,6 +107,7 @@
     <Compile Include="MechsOutsideRadius\Patch_MultiPawnGotoController.cs" />
     <Compile Include="MechTaskPrioritization\Patch_FloatMenuOptionProvider_DraftedRepair.cs" />
     <Compile Include="MoveBabyToSaferTempLater\Patch_ChildcareUtility.cs" />
+    <Compile Include="PatchOperationAddIf.cs" />
     <Compile Include="PatchOperationReplaceIf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResurrectedMechsRememberGroup\DeadMechUtility.cs" />

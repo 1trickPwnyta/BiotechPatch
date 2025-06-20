@@ -25,6 +25,7 @@ This mod makes a handful of small tweaks to the Biotech DLC that are intended to
 =Genetics=
 - The auto-wake setting is enabled by default for deathresters.
 - A message appears at the top of the screen when a deathrester wakes up.
+- Pawns with the webbed phalanges gene don't care about being soaking wet.
 - The Health tab can be used to order xenogerm implantation even for xenogerms that are forbidden to the patient.
 - An alert appears on the right side of the screen when a pawn is deficient in a drug they need in order to survive because of their genes.
 - When ordering a pawn to priotitize creating a xenogerm, they will do it until finished instead of getting bored and leaving after a few seconds.
