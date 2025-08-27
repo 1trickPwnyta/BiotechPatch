@@ -13,15 +13,15 @@ namespace BiotechPatch.ChildrenGoByFirstName
         {
             if (!names.ContainsKey(nameTriple))
             {
-                Pawn pawn = PawnsFinder.All_AliveOrDead.FirstOrDefault(p => p.Name is NameTriple name && name.First == nameTriple.First && name.Last == nameTriple.Last);
-                if (pawn != null || Scribe.mode == LoadSaveMode.Inactive)
+                LongEventHandler.ExecuteWhenFinished(() =>
                 {
-                    names[nameTriple] = pawn;
-                }
-                else
-                {
-                    return null;
-                }
+                    Pawn pawn = PawnsFinder.All_AliveOrDead.FirstOrDefault(p => p.Name is NameTriple name && name.First == nameTriple.First && name.Last == nameTriple.Last);
+                    if (pawn != null || Scribe.mode == LoadSaveMode.Inactive)
+                    {
+                        names[nameTriple] = pawn;
+                    }
+                });
+                return null;
             }
             return names[nameTriple];
         }
