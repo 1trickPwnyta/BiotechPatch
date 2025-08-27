@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Verse;
 
 namespace BiotechPatch.MechsInColonistBar
@@ -9,13 +10,13 @@ namespace BiotechPatch.MechsInColonistBar
         {
             if (BiotechPatchSettings.MechsInColonistBar)
             {
-                pawns.AddRange(map.mapPawns.SpawnedColonyMechs);
+                pawns.AddRange(map.mapPawns.SpawnedColonyMechs.Where(m => ShouldShowMechInColonistBar(m)));
             }
         }
 
         public static bool ShouldShowMechInColonistBar(Pawn mech)
         {
-            return BiotechPatchSettings.MechsInColonistBar && mech.IsColonyMech;
+            return BiotechPatchSettings.MechsInColonistBar && mech.IsColonyMech && mech.OverseerSubject != null;
         }
     }
 }
