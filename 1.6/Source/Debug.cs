@@ -8,5 +8,10 @@
             Verse.Log.Message($"[{BiotechPatchMod.PACKAGE_NAME}] {message}");
 #endif
         }
+
+        public static void Warning(object message)
+        {
+            Verse.Log.Warning($"[{BiotechPatchMod.PACKAGE_NAME}] {message}");
+        }
     }
 }
