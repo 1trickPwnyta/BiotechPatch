@@ -9,6 +9,10 @@ namespace BiotechPatch.ChildrenGoByFirstName
 
         public static Pawn GetPawn(this NameTriple nameTriple)
         {
+            if (Current.Game == null)
+            {
+                return null;
+            }
             if (!names.ContainsKey(nameTriple))
             {
                 GameComponent_ChildrenGoByFirstName comp = Current.Game.GetComponent<GameComponent_ChildrenGoByFirstName>();
