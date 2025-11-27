@@ -41,7 +41,7 @@ This mod makes a handful of small tweaks to the Biotech DLC that are intended to
 - Friendly mechs can self-charge on top of power conduits and other non-chair standable buildings.
 - Friendly mechs remember their control group assignment upon being resurrected.
 - Friendly mechs with no energy who need to be carried to a recharger use a different symbol (power outage symbol vs. self charge symbol) and get an alert on the right side of the screen.
-- Bug fix: Constructoids cannot be ordered to repair buildings such as doors while drafted.
+- Friendly mechs can be given right-click orders to prioritize specific tasks, both while undrafted and drafted, similar to humans.
 
 =Miscellaneous=
 - No more message spam when extracting hemogen from a prisoner of a hostile faction.

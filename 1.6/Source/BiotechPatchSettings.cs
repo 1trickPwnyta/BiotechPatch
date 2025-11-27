@@ -1,5 +1,4 @@
 ﻿using RimWorld;
-using System.Linq;
 using UnityEngine;
 using Verse;
 
@@ -43,51 +42,50 @@ namespace BiotechPatch
         {
             Rect viewRect = new Rect(0f, 0f, inRect.width - 20f, y);
             Widgets.BeginScrollView(inRect, ref scrollPosition, viewRect);
-
             Listing_Standard listing = new Listing_Standard() { maxOneColumn = true };
             listing.Begin(viewRect);
 
             DoHeader(listing, "BiotechPatch_Children");
-            listing.CheckboxLabeled("BiotechPatch_ChildLaborEncouraged".Translate() + " " + "BiotechPatch_RestartRequired".Translate(), ref ChildLaborEncouraged);
-            listing.CheckboxLabeled("BiotechPatch_LoadGrowthVats".Translate() + " " + "BiotechPatch_RestartRequired".Translate(), ref LoadGrowthVats);
-            listing.CheckboxLabeled("BiotechPatch_AutoChildNicknamesDisabled".Translate(), ref AutoChildNicknamesDisabled);
-            listing.CheckboxLabeled("BiotechPatch_ChildrenGoByFirstName".Translate(), ref ChildrenGoByFirstName);
-            listing.CheckboxLabeled("BiotechPatch_GrowthMomentChoiceColors".Translate(), ref GrowthMomentChoiceColors);
-            listing.CheckboxLabeled("BiotechPatch_GrowthMomentTraitSuppression".Translate(), ref GrowthMomentTraitSuppression);
-            listing.CheckboxLabeled("BiotechPatch_BreastfeedingCanBeInterrupted".Translate(), ref BreastfeedingCanBeInterrupted);
-            listing.CheckboxLabeled("BiotechPatch_BirthNotCancelledWhenNotDowned".Translate(), ref BirthNotCancelledWhenNotDowned);
-            listing.CheckboxLabeled("BiotechPatch_MoveBabyToSaferTempLater".Translate(), ref MoveBabyToSaferTempLater);
+            DoSetting(listing, "BiotechPatch_ChildLaborEncouraged", ref ChildLaborEncouraged, restartRequired: true);
+            DoSetting(listing, "BiotechPatch_LoadGrowthVats", ref LoadGrowthVats, restartRequired: true);
+            DoSetting(listing, "BiotechPatch_AutoChildNicknamesDisabled", ref AutoChildNicknamesDisabled);
+            DoSetting(listing, "BiotechPatch_ChildrenGoByFirstName", ref ChildrenGoByFirstName);
+            DoSetting(listing, "BiotechPatch_GrowthMomentChoiceColors", ref GrowthMomentChoiceColors);
+            DoSetting(listing, "BiotechPatch_GrowthMomentTraitSuppression", ref GrowthMomentTraitSuppression, bugFix: true);
+            DoSetting(listing, "BiotechPatch_BreastfeedingCanBeInterrupted", ref BreastfeedingCanBeInterrupted);
+            DoSetting(listing, "BiotechPatch_BirthNotCancelledWhenNotDowned", ref BirthNotCancelledWhenNotDowned, bugFix: true);
+            DoSetting(listing, "BiotechPatch_MoveBabyToSaferTempLater", ref MoveBabyToSaferTempLater);
 
             listing.Gap();
 
             DoHeader(listing, "BiotechPatch_Genetics");
-            listing.CheckboxLabeled("BiotechPatch_DeathrestAutoWake".Translate(), ref DeathrestAutoWake);
-            listing.CheckboxLabeled("BiotechPatch_DeathrestWakeupMessage".Translate(), ref DeathrestWakeupMessage);
-            listing.CheckboxLabeled("BiotechPatch_WebbedPhalangesCanBeWet".Translate() + " " + "BiotechPatch_RestartRequired".Translate(), ref WebbedPhalangesCanBeWet);
-            listing.CheckboxLabeled("BiotechPatch_AllowForbiddenXenogermImplantation".Translate(), ref AllowForbiddenXenogermImplantation);
-            listing.CheckboxLabeled("BiotechPatch_DrugDeficiencyAlert".Translate(), ref DrugDeficiencyAlert);
-            listing.CheckboxLabeled("BiotechPatch_XenogermCreationForced".Translate(), ref XenogermCreationForced);
-            listing.CheckboxLabeled("BiotechPatch_GeneTraitsDontCancelIdentical".Translate(), ref GeneTraitsDontCancelIdentical);
-            listing.CheckboxLabeled("BiotechPatch_CustomHybridXenotypes".Translate(), ref CustomHybridXenotypes);
+            DoSetting(listing, "BiotechPatch_DeathrestAutoWake", ref DeathrestAutoWake);
+            DoSetting(listing, "BiotechPatch_DeathrestWakeupMessage", ref DeathrestWakeupMessage);
+            DoSetting(listing, "BiotechPatch_WebbedPhalangesCanBeWet", ref WebbedPhalangesCanBeWet, restartRequired: true);
+            DoSetting(listing, "BiotechPatch_AllowForbiddenXenogermImplantation", ref AllowForbiddenXenogermImplantation);
+            DoSetting(listing, "BiotechPatch_DrugDeficiencyAlert", ref DrugDeficiencyAlert);
+            DoSetting(listing, "BiotechPatch_XenogermCreationForced", ref XenogermCreationForced);
+            DoSetting(listing, "BiotechPatch_GeneTraitsDontCancelIdentical", ref GeneTraitsDontCancelIdentical, bugFix: true);
+            DoSetting(listing, "BiotechPatch_CustomHybridXenotypes", ref CustomHybridXenotypes, bugFix: true);
 
             listing.Gap();
 
             DoHeader(listing, "BiotechPatch_Mechanoids");
-            listing.CheckboxLabeled("BiotechPatch_MechsInColonistBar".Translate(), ref MechsInColonistBar);
-            listing.CheckboxLabeled("BiotechPatch_MechsOutsideRadius".Translate(), ref MechsOutsideRadius);
-            listing.CheckboxLabeled("BiotechPatch_MechAutoRepair".Translate(), ref MechAutoRepair);
-            listing.CheckboxLabeled("BiotechPatch_ExostriderLostAllowsComplex".Translate(), ref ExostriderLostAllowsComplex);
-            listing.CheckboxLabeled("BiotechPatch_MechsControlledByCaravan".Translate(), ref MechsControlledByCaravan);
-            listing.CheckboxLabeled("BiotechPatch_MechsCanSleepOnConduits".Translate(), ref MechsCanSleepOnConduits);
-            listing.CheckboxLabeled("BiotechPatch_ResurrectedMechsRememberGroup".Translate(), ref ResurrectedMechsRememberGroup);
-            listing.CheckboxLabeled("BiotechPatch_MechEnergyDepletedAlert".Translate(), ref MechEnergyDepletedAlert);
-            listing.CheckboxLabeled("BiotechPatch_MechTaskPrioritization".Translate(), ref MechTaskPrioritization);
+            DoSetting(listing, "BiotechPatch_MechsInColonistBar", ref MechsInColonistBar);
+            DoSetting(listing, "BiotechPatch_MechsOutsideRadius", ref MechsOutsideRadius);
+            DoSetting(listing, "BiotechPatch_MechAutoRepair", ref MechAutoRepair);
+            DoSetting(listing, "BiotechPatch_ExostriderLostAllowsComplex", ref ExostriderLostAllowsComplex, bugFix: true);
+            DoSetting(listing, "BiotechPatch_MechsControlledByCaravan", ref MechsControlledByCaravan);
+            DoSetting(listing, "BiotechPatch_MechsCanSleepOnConduits", ref MechsCanSleepOnConduits);
+            DoSetting(listing, "BiotechPatch_ResurrectedMechsRememberGroup", ref ResurrectedMechsRememberGroup);
+            DoSetting(listing, "BiotechPatch_MechEnergyDepletedAlert", ref MechEnergyDepletedAlert);
+            DoSetting(listing, "BiotechPatch_MechTaskPrioritization", ref MechTaskPrioritization, bugFix: true);
 
             listing.Gap();
 
             DoHeader(listing, "BiotechPatch_Misc");
-            listing.CheckboxLabeled("BiotechPatch_HemogenExtractionSpam".Translate(), ref HemogenExtractionSpam);
-            listing.CheckboxLabeled("BiotechPatch_WastepackDeteriorationMuted".Translate(), ref WastepackDeteriorationMuted);
+            DoSetting(listing, "BiotechPatch_HemogenExtractionSpam", ref HemogenExtractionSpam);
+            DoSetting(listing, "BiotechPatch_WastepackDeteriorationMuted", ref WastepackDeteriorationMuted);
 
             y = listing.CurHeight;
             listing.End();
@@ -97,10 +95,20 @@ namespace BiotechPatch
 
         private static void DoHeader(Listing_Standard listing, string key)
         {
-            Text.Font = GameFont.Medium;
-            listing.Label(key.Translate());
+            using (new TextBlock(GameFont.Medium))
+            {
+                listing.Label(key.Translate());
+            }
             listing.GapLine();
-            Text.Font = GameFont.Small;
+        }
+
+        private static void DoSetting(Listing_Standard listing, string key, ref bool setting, bool restartRequired = false, bool bugFix = false, bool dependsOn = true, int indentLevel = 0)
+        {
+            if (dependsOn)
+            {
+                string indent = new string(' ', indentLevel * 2);
+                listing.CheckboxLabeled(indent + (bugFix ? "BiotechPatch_BugFix".Translate() + ": " : TaggedString.Empty) + key.Translate() + (restartRequired ? " " + "BiotechPatch_RestartRequired".Translate() : TaggedString.Empty), ref setting);
+            }
         }
 
         public override void ExposeData()
