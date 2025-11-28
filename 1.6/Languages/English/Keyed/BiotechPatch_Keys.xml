@@ -22,7 +22,6 @@
 	<BiotechPatch_GeneTraitsDontCancelIdentical>Same xenogene/endogene can both cancel each other out</BiotechPatch_GeneTraitsDontCancelIdentical>
 	<BiotechPatch_GrowthMomentChoiceColors>Show colored trait/passion choices for growth moments based on utility</BiotechPatch_GrowthMomentChoiceColors>
 	<BiotechPatch_GrowthMomentTraitSuppression>Traits selected at growth moment are unsuppressed by genes that should suppress them</BiotechPatch_GrowthMomentTraitSuppression>
-	<BiotechPatch_ExostriderLostAllowsComplex>Abandoning the exostrider remains prevents mechanitor complex quest</BiotechPatch_ExostriderLostAllowsComplex>
 	<BiotechPatch_CustomHybridXenotypes>Children of a custom xenotype and another custom xenotype or baseliner are labeled as baseliner</BiotechPatch_CustomHybridXenotypes>
 	<BiotechPatch_BreastfeedingCanBeInterrupted>Breastfeeding can be interrupted if the lactator has more important things to do</BiotechPatch_BreastfeedingCanBeInterrupted>
 	<BiotechPatch_MoveBabyToSaferTempLater>Only move baby to safer temperature when it has temperature injury</BiotechPatch_MoveBabyToSaferTempLater>

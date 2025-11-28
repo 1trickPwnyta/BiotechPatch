@@ -84,7 +84,6 @@
     <Compile Include="Dialog_Input.cs" />
     <Compile Include="DrugDeficiencyAlert\Alert_DrugDeficiencyComa.cs" />
     <Compile Include="DrugDeficiencyAlert\Alert_DrugDeficiency.cs" />
-    <Compile Include="ExostriderLostAllowsComplex\Comp_DatacoreAbandonable.cs" />
     <Compile Include="GeneTraitsDontCancelIdentical\Patch_TraitSet.cs" />
     <Compile Include="GrowthMomentChoiceColors\Patch_Dialog_GrowthMomentChoices.cs" />
     <Compile Include="GrowthMomentChoiceColors\Patch_Widgets.cs" />
