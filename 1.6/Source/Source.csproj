@@ -66,9 +66,6 @@
     <Compile Include="BiotechPatchInitializer.cs" />
     <Compile Include="BiotechPatchRefs.cs" />
     <Compile Include="BiotechPatchSettings.cs" />
-    <Compile Include="BirthNotCancelledWhenNotDowned\BirthUtility.cs" />
-    <Compile Include="BirthNotCancelledWhenNotDowned\Patch_JobGiver_KeepLyingDown.cs" />
-    <Compile Include="BirthNotCancelledWhenNotDowned\Patch_Pawn_HealthTracker.cs" />
     <Compile Include="BreastfeedingCanBeInterrupted\Patch_ChildcareUtility.cs" />
     <Compile Include="BreastfeedingCanBeInterrupted\Patch_JobGiver_Autofeed.cs" />
     <Compile Include="BreastfeedingCanBeInterrupted\WorkGiver_BreastfeedCarried.cs" />

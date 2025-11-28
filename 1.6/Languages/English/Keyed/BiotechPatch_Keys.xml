@@ -19,13 +19,12 @@
 	<BiotechPatch_AutoChildNicknamesDisabled>Disable auto-nicknaming of children at growth moments</BiotechPatch_AutoChildNicknamesDisabled>
 	<BiotechPatch_ChildrenGoByFirstName>Children are called by their first name by default</BiotechPatch_ChildrenGoByFirstName>
 	<BiotechPatch_XenogermCreationForced>Prioritizing creating a xenogerm won't be interrupted at the worker's whimsy</BiotechPatch_XenogermCreationForced>
-	<BiotechPatch_GeneTraitsDontCancelIdentical>Bug fix: Same xenogene/endogene can both cancel each other out</BiotechPatch_GeneTraitsDontCancelIdentical>
+	<BiotechPatch_GeneTraitsDontCancelIdentical>Same xenogene/endogene can both cancel each other out</BiotechPatch_GeneTraitsDontCancelIdentical>
 	<BiotechPatch_GrowthMomentChoiceColors>Show colored trait/passion choices for growth moments based on utility</BiotechPatch_GrowthMomentChoiceColors>
-	<BiotechPatch_GrowthMomentTraitSuppression>Bug fix: Traits selected at growth moment are unsuppressed by genes that should suppress them</BiotechPatch_GrowthMomentTraitSuppression>
-	<BiotechPatch_ExostriderLostAllowsComplex>Bug fix: Abandoning the exostrider remains prevents mechanitor complex quest</BiotechPatch_ExostriderLostAllowsComplex>
-	<BiotechPatch_CustomHybridXenotypes>Bug fix: Children of a custom xenotype and another custom xenotype or baseliner are labeled as baseliner</BiotechPatch_CustomHybridXenotypes>
+	<BiotechPatch_GrowthMomentTraitSuppression>Traits selected at growth moment are unsuppressed by genes that should suppress them</BiotechPatch_GrowthMomentTraitSuppression>
+	<BiotechPatch_ExostriderLostAllowsComplex>Abandoning the exostrider remains prevents mechanitor complex quest</BiotechPatch_ExostriderLostAllowsComplex>
+	<BiotechPatch_CustomHybridXenotypes>Children of a custom xenotype and another custom xenotype or baseliner are labeled as baseliner</BiotechPatch_CustomHybridXenotypes>
 	<BiotechPatch_BreastfeedingCanBeInterrupted>Breastfeeding can be interrupted if the lactator has more important things to do</BiotechPatch_BreastfeedingCanBeInterrupted>
-	<BiotechPatch_BirthNotCancelledWhenNotDowned>Bug fix: If a pawn giving birth is downed and then undowned during labor, the ritual is cancelled</BiotechPatch_BirthNotCancelledWhenNotDowned>
 	<BiotechPatch_MoveBabyToSaferTempLater>Only move baby to safer temperature when it has temperature injury</BiotechPatch_MoveBabyToSaferTempLater>
 	<BiotechPatch_MechsControlledByCaravan>Mechanitors in caravans can control their mechs back home (command range still applies)</BiotechPatch_MechsControlledByCaravan>
 	<BiotechPatch_MechsCanSleepOnConduits>Allow mechs to self-charge on top of power conduits and other non-chair standable buildings</BiotechPatch_MechsCanSleepOnConduits>

@@ -25,7 +25,6 @@ namespace BiotechPatch
         public static bool ExostriderLostAllowsComplex = true;
         public static bool CustomHybridXenotypes = true;
         public static bool BreastfeedingCanBeInterrupted = true;
-        public static bool BirthNotCancelledWhenNotDowned = true;
         public static bool MoveBabyToSaferTempLater = true;
         public static bool MechsControlledByCaravan = true;
         public static bool MechsCanSleepOnConduits = true;
@@ -53,7 +52,6 @@ namespace BiotechPatch
             DoSetting(listing, "BiotechPatch_GrowthMomentChoiceColors", ref GrowthMomentChoiceColors);
             DoSetting(listing, "BiotechPatch_GrowthMomentTraitSuppression", ref GrowthMomentTraitSuppression, bugFix: true);
             DoSetting(listing, "BiotechPatch_BreastfeedingCanBeInterrupted", ref BreastfeedingCanBeInterrupted);
-            DoSetting(listing, "BiotechPatch_BirthNotCancelledWhenNotDowned", ref BirthNotCancelledWhenNotDowned, bugFix: true);
             DoSetting(listing, "BiotechPatch_MoveBabyToSaferTempLater", ref MoveBabyToSaferTempLater);
 
             listing.Gap();
@@ -132,7 +130,6 @@ namespace BiotechPatch
             Scribe_Values.Look(ref ExostriderLostAllowsComplex, "ExostriderLostAllowsComplex", true);
             Scribe_Values.Look(ref CustomHybridXenotypes, "CustomHybridXenotypes", true);
             Scribe_Values.Look(ref BreastfeedingCanBeInterrupted, "BreastfeedingCanBeInterrupted", true);
-            Scribe_Values.Look(ref BirthNotCancelledWhenNotDowned, "BirthNotCancelledWhenNotDowned", true);
             Scribe_Values.Look(ref MoveBabyToSaferTempLater, "MoveBabyToSaferTempLater", true);
             Scribe_Values.Look(ref MechsControlledByCaravan, "MechsControlledByCaravan", true);
             Scribe_Values.Look(ref MechsCanSleepOnConduits, "MechsCanSleepOnConduits", true);
