@@ -94,6 +94,11 @@
     <Compile Include="GrowthMomentTraitSuppression\Patch_ChoiceLetter_GrowthMoment.cs" />
     <Compile Include="HemogenExtractionSpam\GoodwillUtility.cs" />
     <Compile Include="HemogenExtractionSpam\Patch_RecipeWorker.cs" />
+    <Compile Include="HemogenFarmAnyone\CompProperties_HemogenFarm.cs" />
+    <Compile Include="HemogenFarmAnyone\Comp_HemogenFarm.cs" />
+    <Compile Include="HemogenFarmAnyone\Patch_Alert_AwaitingMedicalOperation.cs" />
+    <Compile Include="HemogenFarmAnyone\Patch_HealthCardUtility.cs" />
+    <Compile Include="HemogenFarmAnyone\Patch_ITab_Pawn_Health.cs" />
     <Compile Include="MechAutoRepair\Patch_CompMechRepairable.cs" />
     <Compile Include="MechEnergyDepletedAlert\Alert_MechEnergyDepleted.cs" />
     <Compile Include="MechEnergyDepletedAlert\Patch_PawnUIOverlay.cs" />

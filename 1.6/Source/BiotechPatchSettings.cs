@@ -32,6 +32,7 @@ namespace BiotechPatch
         public static bool MechEnergyDepletedAlert = true;
         public static bool MechTaskPrioritization = true;
         public static bool WebbedPhalangesCanBeWet = true;
+        public static bool HemogenFarmAnyone = true;
 
         private static Vector2 scrollPosition;
         private static float y;
@@ -80,6 +81,7 @@ namespace BiotechPatch
             listing.Gap();
 
             DoHeader(listing, "BiotechPatch_Misc");
+            DoSetting(listing, "BiotechPatch_HemogenFarmAnyone", ref HemogenFarmAnyone, restartRequired: true);
             DoSetting(listing, "BiotechPatch_HemogenExtractionSpam", ref HemogenExtractionSpam);
             DoSetting(listing, "BiotechPatch_WastepackDeteriorationMuted", ref WastepackDeteriorationMuted);
 
@@ -135,6 +137,7 @@ namespace BiotechPatch
             Scribe_Values.Look(ref MechEnergyDepletedAlert, "MechEnergyDepletedAlert", true);
             Scribe_Values.Look(ref MechTaskPrioritization, "MechTaskPrioritization", true);
             Scribe_Values.Look(ref WebbedPhalangesCanBeWet, "WebbedPhalangesCanBeWet", true);
+            Scribe_Values.Look(ref HemogenFarmAnyone, "HemogenFarmAnyone", true);
         }
     }
 }
