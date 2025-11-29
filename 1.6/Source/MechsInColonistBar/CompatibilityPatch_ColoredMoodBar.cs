@@ -61,11 +61,11 @@ namespace BiotechPatch.MechsInColonistBar
             return instructionsList;
         }
 
-        private static Need GetMoodNeed(Pawn_NeedsTracker needs) => BiotechPatchSettings.MechsInColonistBar ? (needs.mood as Need ?? needs.energy) : needs.mood;
+        private static Need GetMoodNeed(Pawn_NeedsTracker needs) => needs.mood as Need ?? needs.energy;
 
         private static bool SetParametersForEnergy(Pawn pawn, MoodCache cache)
         {
-            if (BiotechPatchSettings.MechsInColonistBar && pawn.IsColonyMech)
+            if (pawn.IsColonyMech)
             {
                 MechanitorControlGroup group = pawn.GetMechControlGroup();
                 if (group == null || pawn.needs.energy.CurLevelPercentage > group.mechRechargeThresholds.min)

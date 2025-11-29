@@ -47,13 +47,13 @@ namespace BiotechPatch.MechsInColonistBar
             return instructionsList;
         }
 
-        private static Need GetMoodNeed(Pawn_NeedsTracker needs) => BiotechPatchSettings.MechsInColonistBar ? (needs.mood as Need ?? needs.energy) : needs.mood;
+        private static Need GetMoodNeed(Pawn_NeedsTracker needs) => needs.mood as Need ?? needs.energy;
 
-        private static bool ShouldShowMechEnergy(Pawn pawn) => Prefs.VisibleMood && BiotechPatchSettings.MechsInColonistBar && pawn.IsColonyMech && !pawn.Dead;
+        private static bool ShouldShowMechEnergy(Pawn pawn) => Prefs.VisibleMood && pawn.IsColonyMech && !pawn.Dead;
 
         private static MoodThreshold GetMoodThreshold(MoodThreshold original, Pawn pawn)
         {
-            if (BiotechPatchSettings.MechsInColonistBar && pawn.IsColonyMech)
+            if (pawn.IsColonyMech)
             {
                 MechanitorControlGroup group = pawn.GetMechControlGroup();
                 if (group == null || pawn.needs.energy.CurLevelPercentage > group.mechRechargeThresholds.min)
