@@ -33,6 +33,7 @@
 	<BiotechPatch_MechTaskPrioritization>Allow right-clicking to prioritize tasks for mechs</BiotechPatch_MechTaskPrioritization>
 	<BiotechPatch_WebbedPhalangesCanBeWet>Pawns with webbed phalanges don't care about being soaking wet</BiotechPatch_WebbedPhalangesCanBeWet>
 	<BiotechPatch_HemogenFarmAnyone>Add a toggle on human pawns' health tabs to allow hemogen farming, even for non-prisoners.</BiotechPatch_HemogenFarmAnyone>
+	<BiotechPatch_KillThirstSatisfiedInAnyMelee>Kill thirst is satisfied in melee combat, regardless of weapon used</BiotechPatch_KillThirstSatisfiedInAnyMelee>
 	<BiotechPatch_BugFix>Bug fix</BiotechPatch_BugFix>
 	<BiotechPatch_DrugDeficiencyAlertLabel>Drug deficiency</BiotechPatch_DrugDeficiencyAlertLabel>
 	<BiotechPatch_DrugDeficiencyAlertDesc>People are deficient in their life-sustaining drugs:\n{0}</BiotechPatch_DrugDeficiencyAlertDesc>

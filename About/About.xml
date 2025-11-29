@@ -29,6 +29,7 @@ This mod makes a handful of small tweaks to the Biotech DLC that are intended to
 - The Health tab can be used to order xenogerm implantation even for xenogerms that are forbidden to the patient.
 - An alert appears on the right side of the screen when a pawn is deficient in a drug they need in order to survive because of their genes.
 - When ordering a pawn to priotitize creating a xenogerm, they will do it until finished instead of getting bored and leaving after a few seconds.
+- Kill thirst is satisfied by killing in melee combat, regardless of weapon type equipped.
 - Bug fix: Same xenogene/endogene can both cancel each other out if they give the same trait.
 - Bug fix: Children of a custom xenotype and another custom xenotype or baseliner are labeled as baseliner.
 
@@ -44,6 +45,7 @@ This mod makes a handful of small tweaks to the Biotech DLC that are intended to
 - Friendly mechs can be given right-click orders to prioritize specific tasks, both while undrafted and drafted, similar to humans.
 
 =Miscellaneous=
+- Allow hemogen farming any colonist, not just prisoners. This adds a checkbox to the health tab.
 - No more message spam when extracting hemogen from a prisoner of a hostile faction.
 - No more message spam when wastepacks deteriorate outside of the home area.
 

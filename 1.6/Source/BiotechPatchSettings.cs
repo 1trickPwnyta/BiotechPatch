@@ -33,6 +33,7 @@ namespace BiotechPatch
         public static bool MechTaskPrioritization = true;
         public static bool WebbedPhalangesCanBeWet = true;
         public static bool HemogenFarmAnyone = true;
+        public static bool KillThirstSatisfiedInAnyMelee = true;
 
         private static Vector2 scrollPosition;
         private static float y;
@@ -53,7 +54,7 @@ namespace BiotechPatch
             DoSetting(listing, "BiotechPatch_GrowthMomentTraitSuppression", ref GrowthMomentTraitSuppression, bugFix: true);
             DoSetting(listing, "BiotechPatch_BreastfeedingCanBeInterrupted", ref BreastfeedingCanBeInterrupted);
             DoSetting(listing, "BiotechPatch_MoveBabyToSaferTempLater", ref MoveBabyToSaferTempLater);
-
+            
             listing.Gap();
 
             DoHeader(listing, "BiotechPatch_Genetics");
@@ -63,6 +64,7 @@ namespace BiotechPatch
             DoSetting(listing, "BiotechPatch_AllowForbiddenXenogermImplantation", ref AllowForbiddenXenogermImplantation);
             DoSetting(listing, "BiotechPatch_DrugDeficiencyAlert", ref DrugDeficiencyAlert);
             DoSetting(listing, "BiotechPatch_XenogermCreationForced", ref XenogermCreationForced);
+            DoSetting(listing, "BiotechPatch_KillThirstSatisfiedInAnyMelee", ref KillThirstSatisfiedInAnyMelee);
             DoSetting(listing, "BiotechPatch_GeneTraitsDontCancelIdentical", ref GeneTraitsDontCancelIdentical, bugFix: true);
             DoSetting(listing, "BiotechPatch_CustomHybridXenotypes", ref CustomHybridXenotypes, bugFix: true);
 
@@ -138,6 +140,7 @@ namespace BiotechPatch
             Scribe_Values.Look(ref MechTaskPrioritization, "MechTaskPrioritization", true);
             Scribe_Values.Look(ref WebbedPhalangesCanBeWet, "WebbedPhalangesCanBeWet", true);
             Scribe_Values.Look(ref HemogenFarmAnyone, "HemogenFarmAnyone", true);
+            Scribe_Values.Look(ref KillThirstSatisfiedInAnyMelee, "KillThirstSatisfiedInAnyMelee", true);
         }
     }
 }

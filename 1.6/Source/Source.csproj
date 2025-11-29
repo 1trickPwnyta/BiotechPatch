@@ -99,6 +99,7 @@
     <Compile Include="HemogenFarmAnyone\Patch_Alert_AwaitingMedicalOperation.cs" />
     <Compile Include="HemogenFarmAnyone\Patch_HealthCardUtility.cs" />
     <Compile Include="HemogenFarmAnyone\Patch_ITab_Pawn_Health.cs" />
+    <Compile Include="KillThirstSatisfiedInAnyMelee\Patch_Need_KillThirst.cs" />
     <Compile Include="MechAutoRepair\Patch_CompMechRepairable.cs" />
     <Compile Include="MechEnergyDepletedAlert\Alert_MechEnergyDepleted.cs" />
     <Compile Include="MechEnergyDepletedAlert\Patch_PawnUIOverlay.cs" />
