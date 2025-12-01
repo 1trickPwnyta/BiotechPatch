@@ -1,6 +1,8 @@
 ﻿using HarmonyLib;
+using RimWorld;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Verse;
 
 namespace BiotechPatch.ResurrectedMechsRememberGroup
@@ -13,18 +15,25 @@ namespace BiotechPatch.ResurrectedMechsRememberGroup
 
         public static void Postfix(Pawn __instance)
         {
-            Dictionary<Pawn, int> lastControlGroups = __instance.GetLastControlGroups();
-            List<Pawn> pawnWorkingList = new List<Pawn>();
-            List<int> intWorkingList = new List<int>();
-            Tuple<List<Pawn>, List<int>> workingListTuple = workingLists.TryGetValue(__instance);
-            if (workingListTuple != null)
+            if (BiotechPatchSettings.ResurrectedMechsRememberGroup && __instance.IsColonyMech)
             {
-                pawnWorkingList = workingListTuple.Item1;
-                intWorkingList = workingListTuple.Item2;
+                Dictionary<Pawn, int> lastControlGroups = __instance.GetLastControlGroups();
+                if (Scribe.mode == LoadSaveMode.Saving)
+                {
+                    lastControlGroups.RemoveAll(kv => kv.Key == null || !PawnsFinder.All_AliveOrDead.Contains(kv.Key) || kv.Key.Dead);
+                }
+                List<Pawn> pawnWorkingList = new List<Pawn>();
+                List<int> intWorkingList = new List<int>();
+                Tuple<List<Pawn>, List<int>> workingListTuple = workingLists.TryGetValue(__instance);
+                if (workingListTuple != null)
+                {
+                    pawnWorkingList = workingListTuple.Item1;
+                    intWorkingList = workingListTuple.Item2;
+                }
+                Scribe_Collections.Look(ref lastControlGroups, "lastControlGroups", LookMode.Reference, LookMode.Value, ref pawnWorkingList, ref intWorkingList);
+                workingLists[__instance] = new Tuple<List<Pawn>, List<int>>(pawnWorkingList, intWorkingList);
+                __instance.SetLastControlGroups(lastControlGroups);
             }
-            Scribe_Collections.Look(ref lastControlGroups, "lastControlGroups", LookMode.Reference, LookMode.Value, ref pawnWorkingList, ref intWorkingList);
-            workingLists[__instance] = new Tuple<List<Pawn>, List<int>>(pawnWorkingList, intWorkingList);
-            __instance.SetLastControlGroups(lastControlGroups);
         }
     }
 }
