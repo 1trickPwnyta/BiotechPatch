@@ -15,12 +15,15 @@ namespace BiotechPatch.ChildrenGoByFirstName
 
         public void SchedulePawnSearch(NameTriple nameTriple)
         {
-            namesToSearch.Enqueue(nameTriple);
+            if (!namesToSearch.Contains(nameTriple))
+            {
+                namesToSearch.Enqueue(nameTriple);
+            }
         }
 
-        public override void GameComponentTick()
+        public override void GameComponentUpdate()
         {
-            while (namesToSearch.TryDequeue(out NameTriple nameToSearch))
+            if (namesToSearch.TryDequeue(out NameTriple nameToSearch))
             {
                 Pawn pawn = PawnsFinder.All_AliveOrDead.FirstOrDefault(p => p.Name is NameTriple name && name.First == nameToSearch.First && name.Last == nameToSearch.Last);
                 if (pawn != null || Scribe.mode == LoadSaveMode.Inactive)
