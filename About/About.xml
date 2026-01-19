@@ -3,63 +3,63 @@
 	<name>1trickPwnyta's Biotech Patch</name>
 	<author>1trickPwnyta</author>
 	<packageId>biotechpatch.1trickPwnyta</packageId>
-	<modVersion>1.0.5</modVersion>
+	<modVersion>1.1.0</modVersion>
 	<supportedVersions>
 		<li>1.5</li>
 		<li>1.6</li>
 	</supportedVersions>
-	<description>
-This mod makes a handful of small tweaks to the Biotech DLC that are intended to make the game a bit more enjoyable without changing the gameplay too much. Each tweak can be toggled on or off in the mod settings.
+	<description><![CDATA[This mod makes a handful of small tweaks to the Biotech DLC that are intended to make the game a bit more enjoyable without changing the gameplay too much. Each tweak can be toggled on or off in the mod settings.
 
-=Children=
-- The Child Labor: Encouraged precept requires children to be scheduled for at least 4 consecutive hours of work instead of requiring no scheduled recreation, since children don't recreate anyway.
-- The text for the right-click command "Prioritize growing growth vat" is changed to "Prioritize loading growth vat".
-- Children will not automatically gain a weird nickname like "Man" or "Dude" or "Bicep" at growth moments.
-- Children are called by their first names by default, instead of sometimes going by their last names.
-- Growth moment dialog trait/passion choices are colored. Traits are gray if they would be suppressed by a gene. Passions are red if they would conflict with a gene (such as Awful Mining).
-- Bug fix: Traits selected at growth moment are unsuppressed by genes that should suppress them (pyrophobia/pyromaniac).
-- Lactators can stop breastfeeding before the baby is full if something more important comes up (such as their own needs not being met).
-- Bug fix: If a pawn giving birth is downed and then undowned during labor (such as labor going from debilitating to mild), the ritual is cancelled.
-- Pawns won't move babies to a safer temperature until the baby has at least initial heatstroke/hypothermia.
+<size=18px><color=#5aa9d6>Children</color></size>
+  &#8226; The Child Labor: Encouraged precept requires children to be scheduled for at least 4 consecutive hours of work instead of requiring no scheduled recreation, since children don't recreate anyway.
+  &#8226; The text for the right-click command "Prioritize growing growth vat" is changed to "Prioritize loading growth vat".
+  &#8226; Children will not automatically gain a weird nickname like "Man" or "Dude" or "Bicep" at growth moments.
+  &#8226; Children are called by their first names by default, instead of sometimes going by their last names.
+  &#8226; Growth moment dialog trait/passion choices are colored. Traits are gray if they would be suppressed by a gene. Passions are red if they would conflict with a gene (such as Awful Mining).
+  &#8226; Bug fix: Traits selected at growth moment are unsuppressed by genes that should suppress them (pyrophobia/pyromaniac).
+  &#8226; Lactators can stop breastfeeding before the baby is full if something more important comes up (such as their own needs not being met).
+  &#8226; Pawns won't move babies to a safer temperature until the baby has at least initial heatstroke/hypothermia.
 
-=Genetics=
-- The auto-wake setting is enabled by default for deathresters.
-- A message appears at the top of the screen when a deathrester wakes up.
-- Pawns with the webbed phalanges gene don't care about being soaking wet.
-- The Health tab can be used to order xenogerm implantation even for xenogerms that are forbidden to the patient.
-- An alert appears on the right side of the screen when a pawn is deficient in a drug they need in order to survive because of their genes.
-- When ordering a pawn to priotitize creating a xenogerm, they will do it until finished instead of getting bored and leaving after a few seconds.
-- Kill thirst is satisfied by killing in melee combat, regardless of weapon type equipped.
-- Bug fix: Same xenogene/endogene can both cancel each other out if they give the same trait.
-- Bug fix: Children of a custom xenotype and another custom xenotype or baseliner are labeled as baseliner.
+<size=18px><color=#5aa9d6>Genetics</color></size>
+  &#8226; The auto-wake setting is enabled by default for deathresters.
+  &#8226; A message appears at the top of the screen when a deathrester wakes up.
+  &#8226; Pawns with the webbed phalanges gene don't care about being soaking wet.
+  &#8226; The Health tab can be used to order xenogerm implantation even for xenogerms that are forbidden to the patient.
+  &#8226; An alert appears on the right side of the screen when a pawn is deficient in a drug they need in order to survive because of their genes.
+  &#8226; When ordering a pawn to priotitize creating a xenogerm, they will do it until finished instead of getting bored and leaving after a few seconds.
+  &#8226; Kill thirst is satisfied by killing in melee combat, regardless of weapon type equipped.
+  &#8226; Bug fix: Same xenogene/endogene can both cancel each other out if they give the same trait.
+  &#8226; Bug fix: Children of a custom xenotype and another custom xenotype or baseliner are labeled as baseliner.
 
-=Mechanoids=
-- Colony mechanoids are shown in the colonist bar.
-- Mechs can be ordered to move outside the mechanitor's command range, since zones could be used to accomplish this anyway.
-- Friendly mechs are assigned auto-repair be default.
-- Bug fix: Abandoning the exostrider remains prevents mechanitor complex quest.
-- Friendly mechs can be controlled even when their mechanitor is on a caravan, since the mechanitor doesn't have to be on the same map anyway.
-- Friendly mechs can self-charge on top of power conduits and other non-chair standable buildings.
-- Friendly mechs remember their control group assignment upon being resurrected.
-- Friendly mechs with no energy who need to be carried to a recharger use a different symbol (power outage symbol vs. self charge symbol) and get an alert on the right side of the screen.
-- Friendly mechs can be given right-click orders to prioritize specific tasks, both while undrafted and drafted, similar to humans.
+<size=18px><color=#5aa9d6>Mechanoids</color></size>
+  &#8226; Colony mechanoids are shown in the colonist bar. Instead of mood, charge level is shown.
+  &#8226; Mechs can be ordered to move outside the mechanitor's command range, since zones could be used to accomplish this anyway.
+  &#8226; Friendly mechs are assigned auto-repair be default.
+  &#8226; Friendly mechs can be controlled even when their mechanitor is on a caravan, since the mechanitor doesn't have to be on the same map anyway.
+  &#8226; Friendly mechs can self-charge on top of power conduits and other non-chair standable buildings.
+  &#8226; Friendly mechs remember their control group assignment upon being resurrected.
+  &#8226; Friendly mechs with no energy who need to be carried to a recharger use a different symbol (power outage symbol vs. self charge symbol) and get an alert on the right side of the screen.
+  &#8226; Friendly mechs can be given right-click orders to prioritize specific tasks, both while undrafted and drafted, similar to humans.
 
-=Miscellaneous=
-- Allow hemogen farming any colonist, not just prisoners. This adds a checkbox to the health tab.
-- No more message spam when extracting hemogen from a prisoner of a hostile faction.
-- No more message spam when wastepacks deteriorate outside of the home area.
+<size=18px><color=#5aa9d6>Miscellaneous</color></size>
+  &#8226; Allow hemogen farming any colonist, not just prisoners. This adds a checkbox to the health tab.
+  &#8226; No more message spam when extracting hemogen from a prisoner of a hostile faction.
+  &#8226; No more message spam when wastepacks deteriorate outside of the home area.
 
-=== Updates ===
+________________________________________________
+
+<size=18px><color=#5aa9d6>Updates</color></size>
+01/18/2026: Add ability to hemogen farm any colonist, add kill thirst satisfaction for any melee combat, show mech charge level in colonist bar instead of mood, remove fixes/features that have since been added in vanilla, bug fixes with pawn names and mechanitor mechs.
 10/07/2025: Fix errors when pawn nicknames are handled outside gameplay
 09/10/2025: Fix children first name feature
 06/16/2025: Update to 1.6, remove features now vanilla
 05/21/2025: Fix conflict with Pawn Name Variety, fix pawn name errors when reloading saves
 04/13/2025: Fix conflict with Character Editor
 
-=== Credits ===
-Mod icon: twitter.com/mouse_draws
-Positive thoughts: Viewers like you
-	</description>
+<size=18px><color=#5aa9d6>Credits</color></size>
+  &#8226; Mod icon: twitter.com/mouse_draws
+  &#8226; Positive thoughts: Viewers like you
+	]]></description>
 	<url>https://github.com/1trickPwnyta/BiotechPatch</url>
 	<modDependencies>
 		<li>
