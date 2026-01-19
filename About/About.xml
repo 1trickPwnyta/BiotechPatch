@@ -18,6 +18,7 @@
   &#8226; Growth moment dialog trait/passion choices are colored. Traits are gray if they would be suppressed by a gene. Passions are red if they would conflict with a gene (such as Awful Mining).
   &#8226; Bug fix: Traits selected at growth moment are unsuppressed by genes that should suppress them (pyrophobia/pyromaniac).
   &#8226; Lactators can stop breastfeeding before the baby is full if something more important comes up (such as their own needs not being met).
+  &#8226; Doctors will automatically give the baby to the parent to breastfeed after delivery.
   &#8226; Pawns won't move babies to a safer temperature until the baby has at least initial heatstroke/hypothermia.
 
 <size=18px><color=#5aa9d6>Genetics</color></size>
