@@ -15,7 +15,7 @@ namespace BiotechPatch.ResurrectedMechsRememberGroup
 
         public static void Postfix(Pawn __instance)
         {
-            if (BiotechPatchSettings.ResurrectedMechsRememberGroup && __instance.IsColonyMech)
+            if (BiotechPatchSettings.ResurrectedMechsRememberGroup && Current.Game?.World?.factionManager != null && __instance.IsColonyMech)
             {
                 Dictionary<Pawn, int> lastControlGroups = __instance.GetLastControlGroups();
                 if (Scribe.mode == LoadSaveMode.Saving)
