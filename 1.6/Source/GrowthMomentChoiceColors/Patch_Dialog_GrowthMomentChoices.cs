@@ -124,7 +124,7 @@ namespace BiotechPatch.GrowthMomentChoiceColors
         {
             if (BiotechPatchSettings.GrowthMomentChoiceColors && pawn.genes != null)
             {
-                return pawn.genes.GenesListForReading.Where(g => g.Active && g.def.passionMod != null && g.def.passionMod.modType == PassionMod.PassionModType.DropAll && g.def.passionMod.skill == skill).ToList();
+                return pawn.genes.GenesListForReading.Where(g => g.Active && (g.def.AptitudeFor(skill) < 0 || (g.def.passionMod != null && g.def.passionMod.modType == PassionMod.PassionModType.DropAll && g.def.passionMod.skill == skill))).ToList();
             }
             else
             {
