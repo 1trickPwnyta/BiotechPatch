@@ -3,7 +3,7 @@
 	<name>1trickPwnyta's Biotech Patch</name>
 	<author>1trickPwnyta</author>
 	<packageId>biotechpatch.1trickPwnyta</packageId>
-	<modVersion>1.1.1</modVersion>
+	<modVersion>1.1.2</modVersion>
 	<supportedVersions>
 		<li>1.5</li>
 		<li>1.6</li>
@@ -51,6 +51,7 @@ ________________________________________________
 
 <size=18px><color=#5aa9d6>Updates</color></size>
 
+04/28/2026: Fix bug with growth dialog UI not showing proper passion skill name color when conflicting with a poor aptitude gene
 04/22/2026: Add more error checking
 01/18/2026: Add ability to hemogen farm any colonist, add kill thirst satisfaction for any melee combat, show mech charge level in colonist bar instead of mood, remove fixes/features that have since been added in vanilla, bug fixes with pawn names and mechanitor mechs.
 10/07/2025: Fix errors when pawn nicknames are handled outside gameplay
