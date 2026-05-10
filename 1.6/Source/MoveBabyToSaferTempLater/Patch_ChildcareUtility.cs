@@ -10,7 +10,7 @@ namespace BiotechPatch.MoveBabyToSaferTempLater
     {
         public static void Postfix(Pawn baby, ref bool __result)
         {
-            if (BiotechPatchSettings.MoveBabyToSaferTempLater && __result)
+            if (SpecialModSettings_Multipatch_Biotech.MoveBabyToSaferTempLater && __result)
             {
                 if (!baby.health.hediffSet.HasTemperatureInjury(TemperatureInjuryStage.Initial))
                 {

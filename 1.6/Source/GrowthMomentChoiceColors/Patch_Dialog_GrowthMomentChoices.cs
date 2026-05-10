@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -110,7 +111,7 @@ namespace BiotechPatch.GrowthMomentChoiceColors
 
         private static List<Gene> GetSuppressingGenes(this Pawn pawn, Trait trait)
         {
-            if (BiotechPatchSettings.GrowthMomentChoiceColors && BiotechPatchSettings.GrowthMomentTraitSuppression && pawn.genes != null)
+            if (Settings.GrowthMomentChoiceColors.Enabled() && Settings.GrowthMomentTraitSuppression.Enabled() && pawn.genes != null)
             {
                 return pawn.genes.GenesListForReading.Where(g => g.Active && g.def.suppressedTraits != null && g.def.suppressedTraits.Any(d => d.def == trait.def && d.degree == trait.Degree)).ToList();
             }
@@ -122,7 +123,7 @@ namespace BiotechPatch.GrowthMomentChoiceColors
 
         private static List<Gene> GetConflictingGenes(this Pawn pawn, SkillDef skill)
         {
-            if (BiotechPatchSettings.GrowthMomentChoiceColors && pawn.genes != null)
+            if (Settings.GrowthMomentChoiceColors.Enabled() && pawn.genes != null)
             {
                 return pawn.genes.GenesListForReading.Where(g => g.Active && (g.def.AptitudeFor(skill) < 0 || (g.def.passionMod != null && g.def.passionMod.modType == PassionMod.PassionModType.DropAll && g.def.passionMod.skill == skill))).ToList();
             }

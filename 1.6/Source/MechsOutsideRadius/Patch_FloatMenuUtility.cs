@@ -29,7 +29,7 @@ namespace BiotechPatch.MechsOutsideRadius
     {
         public static bool IsColonyMechPlayerControlledWithCommandRangeApplied(Pawn pawn)
         {
-            return pawn.IsColonyMechPlayerControlled && !BiotechPatchSettings.MechsOutsideRadius;
+            return pawn.IsColonyMechPlayerControlled && !SpecialModSettings_Multipatch_Biotech.MechsOutsideRadius;
         }
     }
 }

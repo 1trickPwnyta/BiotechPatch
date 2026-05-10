@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace BiotechPatch.DrugDeficiencyAlert
 
         public override AlertReport GetReport()
         {
-            if (BiotechPatchSettings.DrugDeficiencyAlert)
+            if (Settings.DrugDeficiencyAlert.Enabled())
             {
                 return AlertReport.CulpritsAre(DeficientPawns);
             }

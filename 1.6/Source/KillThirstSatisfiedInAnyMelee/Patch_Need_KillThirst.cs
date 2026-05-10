@@ -10,7 +10,7 @@ namespace BiotechPatch.KillThirstSatisfiedInAnyMelee
     {
         public static void Postfix(Need_KillThirst __instance, DamageInfo? dinfo)
         {
-            if (BiotechPatchSettings.KillThirstSatisfiedInAnyMelee && dinfo?.Def.isRanged == false)
+            if (SpecialModSettings_Multipatch_Biotech.KillThirstSatisfiedInAnyMelee && dinfo?.Def.isRanged == false)
             {
                 __instance.CurLevel = 1f;
             }

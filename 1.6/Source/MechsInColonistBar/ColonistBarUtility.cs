@@ -8,7 +8,7 @@ namespace BiotechPatch.MechsInColonistBar
     {
         public static void AddColonyMechs(Map map, List<Pawn> pawns)
         {
-            if (BiotechPatchSettings.MechsInColonistBar)
+            if (SpecialModSettings_Multipatch_Biotech.MechsInColonistBar)
             {
                 pawns.AddRange(map.mapPawns.SpawnedColonyMechs.Where(m => ShouldShowMechInColonistBar(m)));
             }
@@ -16,7 +16,7 @@ namespace BiotechPatch.MechsInColonistBar
 
         public static bool ShouldShowMechInColonistBar(Pawn mech)
         {
-            return BiotechPatchSettings.MechsInColonistBar && mech.IsColonyMech && mech.OverseerSubject != null;
+            return SpecialModSettings_Multipatch_Biotech.MechsInColonistBar && mech.IsColonyMech && mech.OverseerSubject != null;
         }
     }
 }

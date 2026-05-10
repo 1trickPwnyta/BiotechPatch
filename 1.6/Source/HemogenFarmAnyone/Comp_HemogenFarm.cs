@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using SpecialSauce.ModSettings;
 using Verse;
 
 namespace BiotechPatch.HemogenFarmAnyone
@@ -36,7 +37,7 @@ namespace BiotechPatch.HemogenFarmAnyone
 
         public override void CompTick()
         {
-            if (BiotechPatchSettings.HemogenFarmAnyone && HemogenFarmEnabled && !Pawn.IsPrisoner && Pawn.IsHashIntervalTick(15000) && SanguophageUtility.CanSafelyBeQueuedForHemogenExtraction(Pawn))
+            if (Settings.HemogenFarmAnyone.Enabled() && HemogenFarmEnabled && !Pawn.IsPrisoner && Pawn.IsHashIntervalTick(15000) && SanguophageUtility.CanSafelyBeQueuedForHemogenExtraction(Pawn))
             {
                 HealthCardUtility.CreateSurgeryBill(Pawn, RecipeDefOf.ExtractHemogenPack, null, sendMessages: false);
             }

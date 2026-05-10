@@ -17,7 +17,7 @@ namespace BiotechPatch.MechsInColonistBar
             Type type = AccessTools.TypeByName("ColoredMoodBar13.MoodCache");
             if (type != null)
             {
-                var harmony = new Harmony(BiotechPatchMod.PACKAGE_ID);
+                var harmony = new Harmony(SpecialMod_Multipatch_Biotech.PACKAGE_ID);
                 harmony.Patch(type.Method("DoMood"), transpiler: typeof(CompatibilityPatch_ColoredMoodBar_DoMood).Method(nameof(CompatibilityPatch_ColoredMoodBar_DoMood.Transpiler)));
             }
         }

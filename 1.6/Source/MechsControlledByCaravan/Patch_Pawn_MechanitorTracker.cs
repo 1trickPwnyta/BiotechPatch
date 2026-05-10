@@ -30,7 +30,7 @@ namespace BiotechPatch.MechsControlledByCaravan
     {
         public static bool SpawnedOrInCaravan(this Pawn pawn)
         {
-            return pawn.Spawned || (BiotechPatchSettings.MechsControlledByCaravan && pawn.IsCaravanMember());
+            return pawn.Spawned || (SpecialModSettings_Multipatch_Biotech.MechsControlledByCaravan && pawn.IsCaravanMember());
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -13,7 +14,7 @@ namespace BiotechPatch.ChildrenGoByFirstName
     {
         public static void Postfix(NameTriple __instance, ref string __result)
         {
-            if (BiotechPatchSettings.ChildrenGoByFirstName && ((string)typeof(NameTriple).Field("nickInt").GetValue(__instance)).NullOrEmpty() && __instance.GetPawn() != null && !__instance.GetPawn().DevelopmentalStage.Adult())
+            if (Settings.ChildrenGoByFirstName.Enabled() && ((string)typeof(NameTriple).Field("nickInt").GetValue(__instance)).NullOrEmpty() && __instance.GetPawn() != null && !__instance.GetPawn().DevelopmentalStage.Adult())
             {
                 __result = __instance.First;
             }

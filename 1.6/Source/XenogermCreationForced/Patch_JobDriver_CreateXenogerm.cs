@@ -29,7 +29,7 @@ namespace BiotechPatch.XenogermCreationForced
     {
         public static int GetExpiryInterval(bool forced)
         {
-            return BiotechPatchSettings.XenogermCreationForced && forced ? -1 : 1200;
+            return SpecialModSettings_Multipatch_Biotech.XenogermCreationForced && forced ? -1 : 1200;
         }
     }
 }

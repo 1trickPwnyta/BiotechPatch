@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Linq;
 using Verse;
 
@@ -11,7 +12,7 @@ namespace BiotechPatch.GeneTraitsDontCancelIdentical
     {
         public static void Postfix(TraitSet __instance, Pawn ___pawn)
         {
-            if (BiotechPatchSettings.GeneTraitsDontCancelIdentical)
+            if (Settings.GeneTraitsDontCancelIdentical.Enabled())
             {
                 foreach (Gene gene in ___pawn.genes.GenesListForReading.Where(g => g.Active && g.def.forcedTraits != null))
                 {

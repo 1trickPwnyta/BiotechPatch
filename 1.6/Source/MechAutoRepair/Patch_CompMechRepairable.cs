@@ -7,7 +7,7 @@ namespace BiotechPatch.MechAutoRepair
     {
         public static void Postfix(CompMechRepairable __instance)
         {
-            if (BiotechPatchSettings.MechAutoRepair)
+            if (SpecialModSettings_Multipatch_Biotech.MechAutoRepair)
             {
                 __instance.autoRepair = true;
             }

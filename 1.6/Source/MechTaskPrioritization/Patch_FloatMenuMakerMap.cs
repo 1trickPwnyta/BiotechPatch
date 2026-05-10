@@ -10,7 +10,7 @@ namespace BiotechPatch.MechTaskPrioritization
     {
         public static void Postfix(ref bool __result)
         {
-            if (BiotechPatchSettings.MechTaskPrioritization)
+            if (SpecialModSettings_Multipatch_Biotech.MechTaskPrioritization)
             {
                 __result = true;
             }

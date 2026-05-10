@@ -10,7 +10,7 @@ namespace BiotechPatch.ResurrectedMechsRememberGroup
     {
         public static bool Prefix(Pawn_MechanitorTracker __instance, Pawn pawn)
         {
-            if (BiotechPatchSettings.ResurrectedMechsRememberGroup)
+            if (SpecialModSettings_Multipatch_Biotech.ResurrectedMechsRememberGroup)
             {
                 Pawn mech = pawn, mechanitor = __instance.Pawn;
                 int index = mech.GetLastControlGroupIndex(mechanitor);

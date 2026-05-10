@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using Verse;
 using Verse.AI;
 
@@ -11,7 +12,7 @@ namespace BiotechPatch.BreastfeedingCanBeInterrupted
     {
         public static void Postfix(ref Job __result)
         {
-            if (BiotechPatchSettings.BreastfeedingCanBeInterrupted)
+            if (Settings.BreastfeedingCanBeInterrupted.Enabled())
             {
                 __result.expiryInterval = 1200;
                 __result.checkOverrideOnExpire = true;
@@ -25,7 +26,7 @@ namespace BiotechPatch.BreastfeedingCanBeInterrupted
     {
         public static void Postfix(Pawn baby, ref bool __result, ref ChildcareUtility.BreastfeedFailReason? reason)
         {
-            if (BiotechPatchSettings.BreastfeedingCanBeInterrupted && baby.CarriedBy != null)
+            if (Settings.BreastfeedingCanBeInterrupted.Enabled() && baby.CarriedBy != null)
             {
                 __result = true;
                 reason = null;
@@ -39,7 +40,7 @@ namespace BiotechPatch.BreastfeedingCanBeInterrupted
     {
         public static void Postfix(Pawn mom, ref Thing food, ref Pawn __result)
         {
-            if (BiotechPatchSettings.BreastfeedingCanBeInterrupted)
+            if (Settings.BreastfeedingCanBeInterrupted.Enabled())
             {
                 Pawn baby = mom.carryTracker.CarriedThing as Pawn;
                 if (baby != null && baby.mindState.AutofeedSetting(mom) == AutofeedMode.Urgent)

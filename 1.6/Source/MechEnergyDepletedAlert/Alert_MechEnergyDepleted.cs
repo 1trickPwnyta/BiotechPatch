@@ -16,7 +16,7 @@ namespace BiotechPatch.MechEnergyDepletedAlert
         private void CalculateTargets()
         {
             targets.Clear();
-            if (BiotechPatchSettings.MechEnergyDepletedAlert)
+            if (SpecialModSettings_Multipatch_Biotech.MechEnergyDepletedAlert)
             {
                 foreach (Pawn pawn in PawnsFinder.AllMaps_Spawned)
                 {

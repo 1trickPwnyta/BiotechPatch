@@ -12,7 +12,7 @@ namespace BiotechPatch.HemogenFarmAnyone
     {
         public static void Postfix(ref Vector2 ___size)
         {
-            if (BiotechPatchSettings.HemogenFarmAnyone)
+            if (SpecialModSettings_Multipatch_Biotech.HemogenFarmAnyone)
             {
                 ___size.y += 23f;
             }

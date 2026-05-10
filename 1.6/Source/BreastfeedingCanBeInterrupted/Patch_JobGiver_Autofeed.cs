@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -31,7 +32,7 @@ namespace BiotechPatch.BreastfeedingCanBeInterrupted
     {
         public static bool SpawnedOrCarriedByBreastfeeder(this Pawn baby, Thing lactator)
         {
-            if (BiotechPatchSettings.BreastfeedingCanBeInterrupted)
+            if (Settings.BreastfeedingCanBeInterrupted.Enabled())
             {
                 return baby.Spawned || baby.CarriedBy == lactator;
             }

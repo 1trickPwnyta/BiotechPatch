@@ -1,5 +1,7 @@
 ﻿using HarmonyLib;
 using LudeonTK;
+using SpecialSauce.ModSettings;
+using SpecialSauce.UI;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 using Verse;
@@ -40,7 +42,7 @@ namespace BiotechPatch.AutoChildNicknamesDisabled
 
         public static float GetNicknameChance()
         {
-            return BiotechPatchSettings.AutoChildNicknamesDisabled ? 0f : 0.5f;
+            return Settings.AutoChildNicknamesDisabled.Enabled() ? 0f : 0.5f;
         }
     }
 }

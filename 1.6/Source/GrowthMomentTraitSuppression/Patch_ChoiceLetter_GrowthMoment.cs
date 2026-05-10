@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -16,8 +17,10 @@ namespace BiotechPatch.GrowthMomentTraitSuppression
         {
             CodeInstruction instruction = instructions.ElementAt(instructions.FirstIndexOf(i => i.opcode == OpCodes.Callvirt && (MethodInfo)i.operand == typeof(TraitSet).Method(nameof(TraitSet.GainTrait))) - 1);
             instruction.opcode = OpCodes.Ldsfld;
-            instruction.operand = typeof(BiotechPatchSettings).Field(nameof(BiotechPatchSettings.GrowthMomentTraitSuppression));
+            instruction.operand = typeof(Patch_ChoiceLetter_GrowthMoment).PropertyGetter(nameof(GrowthMomentTraitSuppression));
             return instructions;
         }
+
+        private static bool GrowthMomentTraitSuppression => Settings.GrowthMomentTraitSuppression.Enabled();
     }
 }

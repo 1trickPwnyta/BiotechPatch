@@ -34,7 +34,7 @@ namespace BiotechPatch.MechsCanSleepOnConduits
             {
                 if (thing is Building building)
                 {
-                    if (!BiotechPatchSettings.MechsCanSleepOnConduits || (building.def.hasInteractionCell && building.InteractionCell == c) || building.def.building.isSittable || building.def.IsDoor)
+                    if (!SpecialModSettings_Multipatch_Biotech.MechsCanSleepOnConduits || (building.def.hasInteractionCell && building.InteractionCell == c) || building.def.building.isSittable || building.def.IsDoor)
                     {
                         return building;
                     }

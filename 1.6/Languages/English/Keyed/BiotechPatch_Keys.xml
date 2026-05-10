@@ -39,7 +39,6 @@
 	<BiotechPatch_DrugDeficiencyAlertDesc>People are deficient in their life-sustaining drugs:\n{0}</BiotechPatch_DrugDeficiencyAlertDesc>
 	<BiotechPatch_DrugDeficiencyComaAlertLabel>Drug deficiency coma</BiotechPatch_DrugDeficiencyComaAlertLabel>
 	<BiotechPatch_DrugDeficiencyComaAlertDesc>Someone is in a coma due to a drug deficiency:\n{0}\n\nIf they do not get the necessary drugs, they will eventually die.</BiotechPatch_DrugDeficiencyComaAlertDesc>
-	<BiotechPatch_InputIsInvalid>Please enter valid input.</BiotechPatch_InputIsInvalid>
 	<BiotechPatch_SuppressedBy>Suppressed by</BiotechPatch_SuppressedBy>
 	<BiotechPatch_AlertMechEnergyDepleted>Mech energy depleted</BiotechPatch_AlertMechEnergyDepleted>
 	<BiotechPatch_AlertMechEnergyDepletedDesc>One or more of your colony mechanoids have completely depleted their energy and must be carried to a recharger.</BiotechPatch_AlertMechEnergyDepletedDesc>

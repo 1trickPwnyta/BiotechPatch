@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -17,17 +18,25 @@ namespace BiotechPatch.DeathrestWakeupMessage
 
             foreach (CodeInstruction instruction in instructions)
             {
-                if (!finished && instruction.opcode == OpCodes.Call && (MethodInfo)instruction.operand == BiotechPatchRefs.m_Gene_Deathrest_Wake)
+                if (!finished && instruction.Calls(typeof(Gene_Deathrest).Method(nameof(Gene_Deathrest.Wake))))
                 {
                     yield return instruction;
                     yield return new CodeInstruction(OpCodes.Ldarg_0);
-                    yield return new CodeInstruction(OpCodes.Ldfld, BiotechPatchRefs.f_Gene_pawn);
-                    yield return new CodeInstruction(OpCodes.Call, BiotechPatchRefs.m_DeathrestUtility_ShowWakeupMessage);
+                    yield return new CodeInstruction(OpCodes.Ldfld, typeof(Gene).Field(nameof(Gene.pawn)));
+                    yield return new CodeInstruction(OpCodes.Call, typeof(Patch_Gene_Deathrest_TickDeathresting).Method(nameof(ShowWakeupMessage)));
                     finished = true;
                     continue;
                 }
 
                 yield return instruction;
+            }
+        }
+
+        private static void ShowWakeupMessage(Pawn pawn)
+        {
+            if (Settings.DeathrestWakeupMessage.Enabled() && PawnUtility.ShouldSendNotificationAbout(pawn))
+            {
+                Messages.Message("BiotechPatch_WokeFromDeathrest".Translate(pawn.Named("PAWN")), pawn, MessageTypeDefOf.PositiveEvent);
             }
         }
     }

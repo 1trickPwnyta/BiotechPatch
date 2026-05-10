@@ -26,7 +26,7 @@ namespace BiotechPatch.MechEnergyDepletedAlert
     {
         public static void DrawMechChargeOverlay(OverlayDrawer drawer, Pawn mech)
         {
-            if (BiotechPatchSettings.MechEnergyDepletedAlert && mech.needs?.energy?.IsLowEnergySelfShutdown == true)
+            if (SpecialModSettings_Multipatch_Biotech.MechEnergyDepletedAlert && mech.needs?.energy?.IsLowEnergySelfShutdown == true)
             {
                 drawer.DrawOverlay(mech, OverlayTypes.NeedsPower);
             }

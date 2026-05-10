@@ -1,10 +1,13 @@
-﻿using RimWorld;
+﻿using HarmonyLib;
+using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Linq;
 using Verse;
 
 namespace BiotechPatch.CustomHybridXenotypes
 {
-    // Patched manually in initializer
+    [HarmonyPatch(typeof(PregnancyUtility))]
+    [HarmonyPatch("TryGetInheritedXenotype")]
     public static class Patch_PregnancyUtility_TryGetInheritedXenotype
     {
         public static void Postfix(Pawn mother, Pawn father, ref XenotypeDef xenotype, ref bool __result)
@@ -17,7 +20,8 @@ namespace BiotechPatch.CustomHybridXenotypes
         }
     }
 
-    // Patched manually in intializer
+    [HarmonyPatch(typeof(PregnancyUtility))]
+    [HarmonyPatch("ShouldByHybrid")]
     public static class Patch_PregnancyUtility_ShouldByHybrid
     {
         public static void Postfix(Pawn mother, Pawn father, ref bool __result)
@@ -33,7 +37,7 @@ namespace BiotechPatch.CustomHybridXenotypes
     {
         public static bool ShouldBeHybrid(Pawn mother, Pawn father)
         {
-            if (BiotechPatchSettings.CustomHybridXenotypes)
+            if (Settings.CustomHybridXenotypes.Enabled())
             {
                 Pawn customXenotypePawn = new[] { mother, father }.FirstOrDefault(p => p != null && p.genes != null && p.genes.CustomXenotype != null);
                 if (customXenotypePawn != null)

@@ -9,7 +9,7 @@ namespace BiotechPatch.MechTaskPrioritization
     {
         public static void Postfix(FloatMenuContext context, ref bool __result)
         {
-            if (!__result && BiotechPatchSettings.MechTaskPrioritization)
+            if (!__result && SpecialModSettings_Multipatch_Biotech.MechTaskPrioritization)
             {
                 if (context.FirstSelectedPawn.IsColonyMech && context.FirstSelectedPawn.def.race.mechEnabledWorkTypes.Contains(WorkTypeDefOf.Construction))
                 {

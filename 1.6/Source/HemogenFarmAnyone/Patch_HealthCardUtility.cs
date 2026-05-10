@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -29,7 +30,7 @@ namespace BiotechPatch.HemogenFarmAnyone
 
         private static void DoHemogenFarmCheckbox(Rect rect, ref float curY, Pawn pawn)
         {
-            if (BiotechPatchSettings.HemogenFarmAnyone)
+            if (Settings.HemogenFarmAnyone.Enabled())
             {
                 curY -= 6f;
                 Rect hemogenFarmRect = new Rect(0f, curY, rect.width, 23f);

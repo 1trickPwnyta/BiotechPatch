@@ -34,7 +34,7 @@ namespace BiotechPatch.WastepackDeteriorationMuted
     {
         public static bool ShouldSendMessage(Thing t, IntVec3 pos, Map map)
         {
-            return !BiotechPatchSettings.WastepackDeteriorationMuted || t.def != ThingDefOf.Wastepack || map.areaManager.Home[pos];
+            return !SpecialModSettings_Multipatch_Biotech.WastepackDeteriorationMuted || t.def != ThingDefOf.Wastepack || map.areaManager.Home[pos];
         }
     }
 }

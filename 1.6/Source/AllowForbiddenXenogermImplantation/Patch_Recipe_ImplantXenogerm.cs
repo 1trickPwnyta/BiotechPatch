@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -29,7 +30,7 @@ namespace BiotechPatch.AllowForbiddenXenogermImplantation
     {
         public static bool IsForbidden(Thing xenogerm, Pawn pawn)
         {
-            return BiotechPatchSettings.AllowForbiddenXenogermImplantation ? false : ForbidUtility.IsForbidden(xenogerm, pawn);
+            return Settings.AllowForbiddenXenogermImplantation.Enabled() ? false : ForbidUtility.IsForbidden(xenogerm, pawn);
         }
     }
 }
