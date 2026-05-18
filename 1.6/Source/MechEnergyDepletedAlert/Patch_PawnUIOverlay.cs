@@ -1,5 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -8,6 +10,7 @@ using Verse;
 
 namespace BiotechPatch.MechEnergyDepletedAlert
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.MechEnergyDepletedAlert)]
     [HarmonyPatch(typeof(PawnUIOverlay))]
     [HarmonyPatch(nameof(PawnUIOverlay.DrawPawnGUIOverlay))]
     public static class Patch_PawnUIOverlay
@@ -26,7 +29,7 @@ namespace BiotechPatch.MechEnergyDepletedAlert
     {
         public static void DrawMechChargeOverlay(OverlayDrawer drawer, Pawn mech)
         {
-            if (SpecialModSettings_Multipatch_Biotech.MechEnergyDepletedAlert && mech.needs?.energy?.IsLowEnergySelfShutdown == true)
+            if (Settings.MechEnergyDepletedAlert.Enabled() && mech.needs?.energy?.IsLowEnergySelfShutdown == true)
             {
                 drawer.DrawOverlay(mech, OverlayTypes.NeedsPower);
             }

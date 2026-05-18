@@ -1,5 +1,4 @@
-﻿using BiotechPatch.MechsOutsideRadius;
-using HarmonyLib;
+﻿using HarmonyLib;
 using SpecialSauce.Multipatch;
 using Verse;
 
@@ -21,13 +20,8 @@ namespace BiotechPatch
         protected override void OnInitialized()
         {
             base.OnInitialized();
-            var harmony = new Harmony(PACKAGE_ID);
-            harmony.PatchAll();
-            if (AccessTools.TypeByName("AchtungMod.Colonist") != null)
-            {
-                harmony.Patch(AccessTools.TypeByName("AchtungMod.Colonist").Method("UpdateOrderPos"), transpiler: typeof(CompatibilityPatch_AchtungMod_Colonist).Method(nameof(CompatibilityPatch_AchtungMod_Colonist.Transpiler)));
-            }
-            //harmony.Patch(typeof(CompMechRepairable).Constructor(new Type[] { }), null, typeof(Patch_CompMechRepairable).Method(nameof(Patch_CompMechRepairable.Postfix)));
+            var harmony = new Harmony(PackageId);
+            harmony.PatchCategory(HarmonyPatch_Compatibility.EnabledCategory);
             Log.Info("Ready.");
         }
     }

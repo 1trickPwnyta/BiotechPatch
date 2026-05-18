@@ -1,11 +1,13 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Linq;
 using Verse;
 
 namespace BiotechPatch.GeneTraitsDontCancelIdentical
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.GeneTraitsDontCancelIdentical)]
     [HarmonyPatch(typeof(TraitSet))]
     [HarmonyPatch("RecalculateSuppression")]
     public static class Patch_TraitSet

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-	<Operation Class="PatchOperationAdd">
+	<Operation Class="SpecialSauce.Multipatch.PatchOperationAdd_Compatibility">
 		<xpath>/Defs/ThingDef[defName="Human"]/comps</xpath>
 		<value>
 			<li Class="BiotechPatch.HemogenFarmAnyone.CompProperties_HemogenFarm" />
 		</value>
+		<modId>1trickpwnyta.biotechpatch</modId>
+		<settingKey>HemogenFarmAnyone</settingKey>
 	</Operation>
 </Patch>

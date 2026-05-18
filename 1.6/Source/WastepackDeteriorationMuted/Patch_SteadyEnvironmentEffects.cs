@@ -1,5 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -8,6 +10,7 @@ using Verse;
 
 namespace BiotechPatch.WastepackDeteriorationMuted
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.WastepackDeteriorationMuted)]
     [HarmonyPatch(typeof(SteadyEnvironmentEffects))]
     [HarmonyPatch(nameof(SteadyEnvironmentEffects.DoDeteriorationDamage))]
     public static class Patch_SteadyEnvironmentEffects
@@ -34,7 +37,7 @@ namespace BiotechPatch.WastepackDeteriorationMuted
     {
         public static bool ShouldSendMessage(Thing t, IntVec3 pos, Map map)
         {
-            return !SpecialModSettings_Multipatch_Biotech.WastepackDeteriorationMuted || t.def != ThingDefOf.Wastepack || map.areaManager.Home[pos];
+            return !Settings.WastepackDeteriorationMuted.Enabled() || t.def != ThingDefOf.Wastepack || map.areaManager.Home[pos];
         }
     }
 }

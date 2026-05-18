@@ -1,15 +1,16 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using UnityEngine;
 using Verse;
-using static HarmonyLib.Code;
 
 namespace BiotechPatch.HemogenFarmAnyone
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.HemogenFarmAnyone)]
     [HarmonyPatch(typeof(HealthCardUtility))]
     [HarmonyPatch("DrawOverviewTab")]
     public static class Patch_HealthCardUtility

@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -7,6 +8,7 @@ using Verse;
 
 namespace BiotechPatch.GrowthMomentChoiceColors
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.GrowthMomentChoiceColors)]
     [HarmonyPatch(typeof(Widgets))]
     [HarmonyPatch(nameof(Widgets.RadioButtonLabeled))]
     public static class Patch_Widgets

@@ -1,10 +1,13 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 
 namespace BiotechPatch.XenogermCreationForced
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.XenogermCreationForced)]
     [HarmonyPatch(typeof(WorkGiver_CreateXenogerm))]
     [HarmonyPatch(nameof(WorkGiver_CreateXenogerm.JobOnThing))]
     public static class Patch_WorkGiver_CreateXenogerm
@@ -29,7 +32,7 @@ namespace BiotechPatch.XenogermCreationForced
     {
         public static int GetExpiryInterval(bool forced)
         {
-            return SpecialModSettings_Multipatch_Biotech.XenogermCreationForced && forced ? -1 : 1200;
+            return Settings.XenogermCreationForced.Enabled() && forced ? -1 : 1200;
         }
     }
 }

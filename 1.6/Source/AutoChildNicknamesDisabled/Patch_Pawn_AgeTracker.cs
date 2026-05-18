@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using LudeonTK;
 using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using SpecialSauce.UI;
 using System.Collections.Generic;
 using System.Reflection.Emit;
@@ -8,6 +9,7 @@ using Verse;
 
 namespace BiotechPatch.AutoChildNicknamesDisabled
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.AutoChildNicknamesDisabled)]
     [HarmonyPatch(typeof(Pawn_AgeTracker))]
     [HarmonyPatch("BirthdayBiological")]
     public static class Patch_Pawn_AgeTracker

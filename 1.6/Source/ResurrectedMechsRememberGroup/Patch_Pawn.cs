@@ -1,12 +1,14 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Verse;
 
 namespace BiotechPatch.ResurrectedMechsRememberGroup
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.ResurrectedMechsRememberGroup)]
     [HarmonyPatch(typeof(Pawn))]
     [HarmonyPatch(nameof(Pawn.ExposeData))]
     public static class Patch_Pawn
@@ -15,7 +17,7 @@ namespace BiotechPatch.ResurrectedMechsRememberGroup
 
         public static void Postfix(Pawn __instance)
         {
-            if (SpecialModSettings_Multipatch_Biotech.ResurrectedMechsRememberGroup && Current.Game?.World?.factionManager != null && __instance.IsColonyMech)
+            if (Settings.ResurrectedMechsRememberGroup.Enabled() && Current.Game?.World?.factionManager != null && __instance.IsColonyMech)
             {
                 Dictionary<Pawn, int> lastControlGroups = __instance.GetLastControlGroups();
                 if (Scribe.mode == LoadSaveMode.Saving)

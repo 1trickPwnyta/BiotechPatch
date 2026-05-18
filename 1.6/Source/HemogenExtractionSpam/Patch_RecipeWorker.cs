@@ -1,12 +1,14 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Reflection.Emit;
 using Verse;
 
 namespace BiotechPatch.HemogenExtractionSpam
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.HemogenExtractionSpam)]
     [HarmonyPatch(typeof(RecipeWorker))]
     [HarmonyPatch("ReportViolation")]
     public static class Patch_RecipeWorker_ReportViolation

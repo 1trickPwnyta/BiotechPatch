@@ -2,19 +2,21 @@
 <Patch>
 	<Operation Class="PatchOperationConditional">
 		<xpath>/Defs/ThoughtDef[defName="SoakingWet"]/nullifyingGenes</xpath>
-		<nomatch Class="BiotechPatch.PatchOperationAddIf">
+		<nomatch Class="SpecialSauce.Patching.PatchOperationAddIfSettingEnabled">
 			<xpath>/Defs/ThoughtDef[defName="SoakingWet"]</xpath>
 			<value>
 				<nullifyingGenes />
 			</value>
-			<setting>WebbedPhalangesCanBeWet</setting>
+			<modId>1trickpwnyta.biotechpatch</modId>
+			<settingKey>WebbedPhalangesCanBeWet</settingKey>
 		</nomatch>
 	</Operation>
-	<Operation Class="BiotechPatch.PatchOperationAddIf">
+	<Operation Class="SpecialSauce.Patching.PatchOperationAddIfSettingEnabled">
 		<xpath>/Defs/ThoughtDef[defName="SoakingWet"]/nullifyingGenes</xpath>
 		<value>
 			<li>WebbedPhalanges</li>
 		</value>
-		<setting>WebbedPhalangesCanBeWet</setting>
+		<modId>1trickpwnyta.biotechpatch</modId>
+		<settingKey>WebbedPhalangesCanBeWet</settingKey>
 	</Operation>
 </Patch>

@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -8,6 +9,7 @@ using Verse;
 
 namespace BiotechPatch.ChildrenGoByFirstName
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.ChildrenGoByFirstName)]
     [HarmonyPatch(typeof(NameTriple))]
     [HarmonyPatch("get_Nick")]
     public static class Patch_NameTriple_get_Nick
@@ -21,6 +23,7 @@ namespace BiotechPatch.ChildrenGoByFirstName
         }
     }
 
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.ChildrenGoByFirstName)]
     [HarmonyPatch(typeof(NameTriple))]
     [HarmonyPatch(nameof(NameTriple.Equals))]
     public static class Patch_NameTriple_Equals
@@ -31,6 +34,7 @@ namespace BiotechPatch.ChildrenGoByFirstName
         }
     }
 
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.ChildrenGoByFirstName)]
     [HarmonyPatch(typeof(NameTriple))]
     [HarmonyPatch(nameof(NameTriple.GetHashCode))]
     public static class Patch_NameTriple_GetHashCode

@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -8,6 +9,7 @@ using Verse;
 
 namespace BiotechPatch.BreastfeedingCanBeInterrupted
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.BreastfeedingCanBeInterrupted)]
     [HarmonyPatch(typeof(JobGiver_Autofeed))]
     [HarmonyPatch("TryGiveJob")]
     public static class Patch_JobGiver_Autofeed

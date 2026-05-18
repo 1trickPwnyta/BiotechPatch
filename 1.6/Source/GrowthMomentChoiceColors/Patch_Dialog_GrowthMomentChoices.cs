@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -10,6 +11,7 @@ using Verse;
 
 namespace BiotechPatch.GrowthMomentChoiceColors
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.GrowthMomentChoiceColors)]
     [HarmonyPatch(typeof(Dialog_GrowthMomentChoices))]
     [HarmonyPatch("DrawTraitChoices")]
     public static class Patch_Dialog_GrowthMomentChoices_DrawTraitChoices
@@ -43,6 +45,7 @@ namespace BiotechPatch.GrowthMomentChoiceColors
         }
     }
 
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.GrowthMomentChoiceColors)]
     [HarmonyPatch(typeof(Dialog_GrowthMomentChoices))]
     [HarmonyPatch("DrawPassionChoices")]
     public static class Patch_Dialog_GrowthMomentChoices_DrawPassionChoices

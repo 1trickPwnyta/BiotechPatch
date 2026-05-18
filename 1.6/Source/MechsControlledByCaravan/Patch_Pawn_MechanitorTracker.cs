@@ -1,6 +1,8 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
+using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -8,6 +10,7 @@ using Verse;
 
 namespace BiotechPatch.MechsControlledByCaravan
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.MechsControlledByCaravan)]
     [HarmonyPatch(typeof(Pawn_MechanitorTracker))]
     [HarmonyPatch("get_CanControlMechs")]
     public static class Patch_Pawn_MechanitorTracker
@@ -30,7 +33,7 @@ namespace BiotechPatch.MechsControlledByCaravan
     {
         public static bool SpawnedOrInCaravan(this Pawn pawn)
         {
-            return pawn.Spawned || (SpecialModSettings_Multipatch_Biotech.MechsControlledByCaravan && pawn.IsCaravanMember());
+            return pawn.Spawned || (Settings.MechsControlledByCaravan.Enabled() && pawn.IsCaravanMember());
         }
     }
 }

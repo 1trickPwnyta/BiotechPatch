@@ -1,13 +1,14 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Reflection.Emit;
 using Verse;
 
 namespace BiotechPatch.DeathrestWakeupMessage
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.DeathrestWakeupMessage)]
     [HarmonyPatch(typeof(Gene_Deathrest))]
     [HarmonyPatch(nameof(Gene_Deathrest.TickDeathresting))]
     public static class Patch_Gene_Deathrest_TickDeathresting
@@ -41,6 +42,7 @@ namespace BiotechPatch.DeathrestWakeupMessage
         }
     }
 
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.DeathrestWakeupMessage)]
     [HarmonyPatch(typeof(Gene_Deathrest))]
     [HarmonyPatch(nameof(Gene_Deathrest.GetGizmos))]
     public static class Patch_Gene_Deathrest_GetGizmos

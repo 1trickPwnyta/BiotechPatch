@@ -1,11 +1,15 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
-using System.Reflection;
+using System.Linq;
 using System.Reflection.Emit;
+using Verse;
 
 namespace BiotechPatch.MechsInColonistBar
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.MechsInColonistBar)]
     [HarmonyPatch(typeof(ColonistBar))]
     [HarmonyPatch("CheckRecacheEntries")]
     public static class Patch_ColonistBar_CheckRecacheEntries
@@ -19,24 +23,24 @@ namespace BiotechPatch.MechsInColonistBar
 
             foreach (CodeInstruction instruction in instructions)
             {
-                if (!foundClear && instruction.opcode == OpCodes.Callvirt && (MethodInfo)instruction.operand == BiotechPatchRefs.m_List_Pawn_Clear)
+                if (!foundClear && instruction.Calls(typeof(List<Pawn>).Method(nameof(List<Pawn>.Clear))))
                 {
                     yield return instruction;
-                    yield return new CodeInstruction(OpCodes.Ldsfld, BiotechPatchRefs.f_ColonistBar_tmpMaps);
+                    yield return new CodeInstruction(OpCodes.Ldsfld, typeof(ColonistBar).Field("tmpMaps"));
                     yield return new CodeInstruction(OpCodes.Ldloc_1);
-                    yield return new CodeInstruction(OpCodes.Callvirt, BiotechPatchRefs.m_List_Map_get_Item);
-                    yield return new CodeInstruction(OpCodes.Ldsfld, BiotechPatchRefs.f_ColonistBar_tmpPawns);
-                    yield return new CodeInstruction(OpCodes.Call, BiotechPatchRefs.m_ColonistBarUtility_AddColonyMechs);
+                    yield return new CodeInstruction(OpCodes.Callvirt, typeof(List<Map>).IndexerGetter(new[] { typeof(int) }));
+                    yield return new CodeInstruction(OpCodes.Ldsfld, typeof(ColonistBar).Field("tmpPawns"));
+                    yield return new CodeInstruction(OpCodes.Call, typeof(Patch_ColonistBar_CheckRecacheEntries).Method(nameof(AddColonyMechs)));
                     foundClear = true;
                     continue;
                 }
                 
-                if (!foundCaravans && instruction.opcode == OpCodes.Ldsfld && (FieldInfo)instruction.operand == BiotechPatchRefs.f_ColonistBar_tmpCaravans)
+                if (!foundCaravans && instruction.LoadsField(typeof(ColonistBar).Field("tmpCaravans")))
                 {
                     foundCaravans = true;
                 }
 
-                if (foundCaravans && !foundColonistCheck && instruction.opcode == OpCodes.Callvirt && (MethodInfo)instruction.operand == BiotechPatchRefs.m_Pawn_get_IsColonist)
+                if (foundCaravans && !foundColonistCheck && instruction.Calls(typeof(Pawn).PropertyGetter(nameof(Pawn.IsColonist))))
                 {
                     foundColonistCheck = true;
                 }
@@ -44,10 +48,10 @@ namespace BiotechPatch.MechsInColonistBar
                 if (foundColonistCheck && !addedMechCheck && instruction.opcode == OpCodes.Brtrue_S)
                 {
                     yield return instruction;
-                    yield return new CodeInstruction(OpCodes.Ldsfld, BiotechPatchRefs.f_ColonistBar_tmpPawns);
+                    yield return new CodeInstruction(OpCodes.Ldsfld, typeof(ColonistBar).Field("tmpPawns"));
                     yield return new CodeInstruction(OpCodes.Ldloc_S, 12);
-                    yield return new CodeInstruction(OpCodes.Callvirt, BiotechPatchRefs.m_List_Pawn_get_Item);
-                    yield return new CodeInstruction(OpCodes.Call, BiotechPatchRefs.m_ColonistBarUtility_ShouldShowMechInColonistBar);
+                    yield return new CodeInstruction(OpCodes.Callvirt, typeof(List<Pawn>).IndexerGetter(new[] { typeof(int) }));
+                    yield return new CodeInstruction(OpCodes.Call, typeof(Patch_ColonistBar_CheckRecacheEntries).Method(nameof(ShouldShowMechInColonistBar)));
                     yield return instruction;
                     addedMechCheck = true;
                     continue;
@@ -55,6 +59,19 @@ namespace BiotechPatch.MechsInColonistBar
 
                 yield return instruction;
             }
+        }
+
+        private static void AddColonyMechs(Map map, List<Pawn> pawns)
+        {
+            if (Settings.MechsInColonistBar.Enabled())
+            {
+                pawns.AddRange(map.mapPawns.SpawnedColonyMechs.Where(m => ShouldShowMechInColonistBar(m)));
+            }
+        }
+
+        private static bool ShouldShowMechInColonistBar(Pawn mech)
+        {
+            return Settings.MechsInColonistBar.Enabled() && mech.IsColonyMech && mech.OverseerSubject != null;
         }
     }
 }

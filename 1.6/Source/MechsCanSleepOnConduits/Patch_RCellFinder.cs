@@ -1,5 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -7,6 +9,7 @@ using Verse;
 
 namespace BiotechPatch.MechsCanSleepOnConduits
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.MechsCanSleepOnConduits)]
     [HarmonyPatch(typeof(RCellFinder))]
     [HarmonyPatch("CanSelfShutdown")]
     public static class Patch_RCellFinder
@@ -34,7 +37,7 @@ namespace BiotechPatch.MechsCanSleepOnConduits
             {
                 if (thing is Building building)
                 {
-                    if (!SpecialModSettings_Multipatch_Biotech.MechsCanSleepOnConduits || (building.def.hasInteractionCell && building.InteractionCell == c) || building.def.building.isSittable || building.def.IsDoor)
+                    if (!Settings.MechsCanSleepOnConduits.Enabled() || (building.def.hasInteractionCell && building.InteractionCell == c) || building.def.building.isSittable || building.def.IsDoor)
                     {
                         return building;
                     }

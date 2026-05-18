@@ -1,10 +1,12 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using Verse;
 
 namespace BiotechPatch.HemogenFarmAnyone
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.HemogenFarmAnyone)]
     [HarmonyPatch(typeof(Alert_AwaitingMedicalOperation))]
     [HarmonyPatch("AwaitingMedicalOperation")]
     [HarmonyPatch(MethodType.Getter)]

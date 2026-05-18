@@ -1,8 +1,11 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 
 namespace BiotechPatch.MechTaskPrioritization
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.MechTaskPrioritization)]
     [HarmonyPatch(typeof(FloatMenuOptionProvider_WorkGivers))]
     [HarmonyPatch("MechanoidCanDo")]
     [HarmonyPatch(MethodType.Getter)]
@@ -10,7 +13,7 @@ namespace BiotechPatch.MechTaskPrioritization
     {
         public static void Postfix(ref bool __result)
         {
-            if (SpecialModSettings_Multipatch_Biotech.MechTaskPrioritization)
+            if (Settings.MechTaskPrioritization.Enabled())
             {
                 __result = true;
             }

@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -8,6 +9,7 @@ using Verse;
 
 namespace BiotechPatch.MechsInColonistBar
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.MechsInColonistBar)]
     [HarmonyPatch(typeof(ColonistBarColonistDrawer))]
     [HarmonyPatch(nameof(ColonistBarColonistDrawer.DrawColonist))]
     public static class Patch_ColonistBarColonistDrawer

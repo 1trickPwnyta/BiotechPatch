@@ -1,11 +1,14 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
-using System.Reflection;
 using System.Reflection.Emit;
+using Verse;
 
 namespace BiotechPatch.MechsOutsideRadius
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.MechsOutsideRadius)]
     [HarmonyPatch(typeof(MultiPawnGotoController))]
     [HarmonyPatch("RecomputeDestinations")]
     public static class Patch_MultiPawnGotoController_RecomputeDestinations
@@ -14,9 +17,9 @@ namespace BiotechPatch.MechsOutsideRadius
         {
             foreach (CodeInstruction instruction in instructions)
             {
-                if (instruction.opcode == OpCodes.Call && (MethodInfo)instruction.operand == BiotechPatchRefs.m_ModsConfig_get_BiotechActive)
+                if (instruction.Calls(typeof(ModsConfig).PropertyGetter(nameof(ModsConfig.BiotechActive))))
                 {
-                    yield return new CodeInstruction(OpCodes.Ldsfld, BiotechPatchRefs.f_BiotechPatchSettings_MechsOutsideRadius);
+                    yield return new CodeInstruction(OpCodes.Call, typeof(Patch_MultiPawnGotoController_RecomputeDestinations).PropertyGetter(nameof(MechsOutsideRadius)));
                     yield return new CodeInstruction(OpCodes.Ldc_I4_1);
                     yield return new CodeInstruction(OpCodes.Xor);
                     continue;
@@ -25,8 +28,11 @@ namespace BiotechPatch.MechsOutsideRadius
                 yield return instruction;
             }
         }
+
+        private static bool MechsOutsideRadius => Settings.MechsOutsideRadius.Enabled();
     }
 
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.MechsOutsideRadius)]
     [HarmonyPatch(typeof(MultiPawnGotoController))]
     [HarmonyPatch("<RecomputeDestinations>g__CanGoTo|27_0")]
     public static class Patch_MultiPawnGotoController_CanGoTo
@@ -35,10 +41,9 @@ namespace BiotechPatch.MechsOutsideRadius
         {
             foreach (CodeInstruction instruction in instructions)
             {
-                if (instruction.opcode == OpCodes.Call && (MethodInfo)instruction.operand == BiotechPatchRefs.m_ModsConfig_get_BiotechActive)
+                if (instruction.Calls(typeof(ModsConfig).PropertyGetter(nameof(ModsConfig.BiotechActive))))
                 {
-                    instruction.opcode = OpCodes.Ldsfld;
-                    instruction.operand = BiotechPatchRefs.f_BiotechPatchSettings_MechsOutsideRadius;
+                    instruction.operand = typeof(Patch_MultiPawnGotoController_CanGoTo).PropertyGetter(nameof(MechsOutsideRadius));
                     yield return instruction;
                     yield return new CodeInstruction(OpCodes.Ldc_I4_1);
                     yield return new CodeInstruction(OpCodes.Xor);
@@ -48,5 +53,7 @@ namespace BiotechPatch.MechsOutsideRadius
                 yield return instruction;
             }
         }
+
+        private static bool MechsOutsideRadius => Settings.MechsOutsideRadius.Enabled();
     }
 }

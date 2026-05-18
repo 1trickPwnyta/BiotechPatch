@@ -1,11 +1,13 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Linq;
 using Verse;
 
 namespace BiotechPatch.CustomHybridXenotypes
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.CustomHybridXenotypes)]
     [HarmonyPatch(typeof(PregnancyUtility))]
     [HarmonyPatch("TryGetInheritedXenotype")]
     public static class Patch_PregnancyUtility_TryGetInheritedXenotype
@@ -20,6 +22,7 @@ namespace BiotechPatch.CustomHybridXenotypes
         }
     }
 
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.CustomHybridXenotypes)]
     [HarmonyPatch(typeof(PregnancyUtility))]
     [HarmonyPatch("ShouldByHybrid")]
     public static class Patch_PregnancyUtility_ShouldByHybrid

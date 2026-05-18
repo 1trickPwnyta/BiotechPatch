@@ -1,4 +1,5 @@
 ﻿using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using Verse;
 
@@ -7,6 +8,7 @@ namespace BiotechPatch.MechEnergyDepletedAlert
     public class Alert_MechEnergyDepleted : Alert
     {
         private readonly List<Pawn> targets = new List<Pawn>();
+        private int recalculateTick = 0;
 
         public Alert_MechEnergyDepleted()
         {
@@ -15,9 +17,9 @@ namespace BiotechPatch.MechEnergyDepletedAlert
 
         private void CalculateTargets()
         {
-            targets.Clear();
-            if (SpecialModSettings_Multipatch_Biotech.MechEnergyDepletedAlert)
+            if (Find.TickManager.TicksGame >= recalculateTick)
             {
+                targets.Clear();
                 foreach (Pawn pawn in PawnsFinder.AllMaps_Spawned)
                 {
                     if (pawn.IsColonyMechPlayerControlled)
@@ -28,6 +30,7 @@ namespace BiotechPatch.MechEnergyDepletedAlert
                         }
                     }
                 }
+                recalculateTick = Find.TickManager.TicksGame + 300;
             }
         }
 
@@ -43,8 +46,15 @@ namespace BiotechPatch.MechEnergyDepletedAlert
 
         public override AlertReport GetReport()
         {
-            CalculateTargets();
-            return AlertReport.CulpritsAre(targets);
+            if (Settings.MechEnergyDepletedAlert.Enabled())
+            {
+                CalculateTargets();
+                return AlertReport.CulpritsAre(targets);
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

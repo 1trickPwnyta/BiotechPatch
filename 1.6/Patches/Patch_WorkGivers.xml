@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-	<Operation Class="BiotechPatch.PatchOperationReplaceIf">
+	<Operation Class="SpecialSauce.Patching.PatchOperationReplaceIfSettingEnabled">
 		<xpath>/Defs/WorkGiverDef[defName="CarryToGrowthVat"]/verb</xpath>
 		<value>
 			<verb>load</verb>
 		</value>
-		<setting>LoadGrowthVats</setting>
+		<modId>1trickpwnyta.biotechpatch</modId>
+		<settingKey>LoadGrowthVats</settingKey>
 	</Operation>
-	<Operation Class="BiotechPatch.PatchOperationReplaceIf">
+	<Operation Class="SpecialSauce.Patching.PatchOperationReplaceIfSettingEnabled">
 		<xpath>/Defs/WorkGiverDef[defName="CarryToGrowthVat"]/gerund</xpath>
 		<value>
 			<gerund>loading</gerund>
 		</value>
-		<setting>LoadGrowthVats</setting>
+		<modId>1trickpwnyta.biotechpatch</modId>
+		<settingKey>LoadGrowthVats</settingKey>
 	</Operation>
-	<Operation Class="PatchOperationReplace">
+	<Operation Class="SpecialSauce.Multipatch.PatchOperationReplace_Compatibility">
 		<xpath>/Defs/WorkGiverDef[defName="BreastfeedBaby"]/giverClass</xpath>
 		<value>
 			<giverClass>BiotechPatch.BreastfeedingCanBeInterrupted.WorkGiver_BreastfeedCarried</giverClass>
 		</value>
+		<modId>1trickpwnyta.biotechpatch</modId>
+		<settingKey>BreastfeedingCanBeInterrupted</settingKey>
 	</Operation>
 </Patch>

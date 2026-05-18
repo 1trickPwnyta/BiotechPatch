@@ -1,11 +1,14 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Reflection.Emit;
-using System.Reflection;
+using Verse;
 
 namespace BiotechPatch.MechsOutsideRadius
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.MechsOutsideRadius)]
     [HarmonyPatch(typeof(FloatMenuOptionProvider_DraftedMove))]
     [HarmonyPatch(nameof(FloatMenuOptionProvider_DraftedMove.PawnCanGoto))]
     public static class Patch_FloatMenuOptionProvider_DraftedMove
@@ -14,9 +17,9 @@ namespace BiotechPatch.MechsOutsideRadius
         {
             foreach (CodeInstruction instruction in instructions)
             {
-                if (instruction.opcode == OpCodes.Call && (MethodInfo)instruction.operand == BiotechPatchRefs.m_ModsConfig_get_BiotechActive)
+                if (instruction.Calls(typeof(ModsConfig).PropertyGetter(nameof(ModsConfig.BiotechActive))))
                 {
-                    yield return new CodeInstruction(OpCodes.Ldsfld, BiotechPatchRefs.f_BiotechPatchSettings_MechsOutsideRadius);
+                    yield return new CodeInstruction(OpCodes.Call, typeof(Patch_FloatMenuOptionProvider_DraftedMove).PropertyGetter(nameof(MechsOutsideRadius)));
                     yield return new CodeInstruction(OpCodes.Ldc_I4_1);
                     yield return new CodeInstruction(OpCodes.Xor);
                     continue;
@@ -25,5 +28,7 @@ namespace BiotechPatch.MechsOutsideRadius
                 yield return instruction;
             }
         }
+
+        private static bool MechsOutsideRadius => Settings.MechsOutsideRadius.Enabled();
     }
 }

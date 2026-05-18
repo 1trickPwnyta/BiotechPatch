@@ -1,10 +1,13 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System;
 using UnityEngine;
 
 namespace BiotechPatch.HemogenFarmAnyone
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.HemogenFarmAnyone)]
     [HarmonyPatch(typeof(ITab_Pawn_Health))]
     [HarmonyPatch(MethodType.Constructor)]
     [HarmonyPatch(new Type[] { })]
@@ -12,7 +15,7 @@ namespace BiotechPatch.HemogenFarmAnyone
     {
         public static void Postfix(ref Vector2 ___size)
         {
-            if (SpecialModSettings_Multipatch_Biotech.HemogenFarmAnyone)
+            if (Settings.HemogenFarmAnyone.Enabled())
             {
                 ___size.y += 23f;
             }

@@ -1,11 +1,13 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using Verse;
 using Verse.AI;
 
 namespace BiotechPatch.BreastfeedingCanBeInterrupted
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.BreastfeedingCanBeInterrupted)]
     [HarmonyPatch(typeof(ChildcareUtility))]
     [HarmonyPatch(nameof(ChildcareUtility.MakeBreastfeedJob))]
     public static class Patch_ChildcareUtility_MakeBreastfeedJob
@@ -20,6 +22,7 @@ namespace BiotechPatch.BreastfeedingCanBeInterrupted
         }
     }
 
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.BreastfeedingCanBeInterrupted)]
     [HarmonyPatch(typeof(ChildcareUtility))]
     [HarmonyPatch(nameof(ChildcareUtility.CanSuckleNow))]
     public static class Patch_ChildcareUtility_CanSuckleNow
@@ -34,6 +37,7 @@ namespace BiotechPatch.BreastfeedingCanBeInterrupted
         }
     }
 
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.BreastfeedingCanBeInterrupted)]
     [HarmonyPatch(typeof(ChildcareUtility))]
     [HarmonyPatch(nameof(ChildcareUtility.FindAutofeedBaby))]
     public static class Patch_ChildcareUtility_FindAutofeedBaby

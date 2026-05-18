@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -8,6 +9,7 @@ using Verse;
 
 namespace BiotechPatch.AllowForbiddenXenogermImplantation
 {
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Biotech.PACKAGE_ID, Settings.AllowForbiddenXenogermImplantation)]
     [HarmonyPatch(typeof(Recipe_ImplantXenogerm))]
     [HarmonyPatch(nameof(Recipe_ImplantXenogerm.AvailableOnNow))]
     public static class Patch_Recipe_ImplantXenogerm

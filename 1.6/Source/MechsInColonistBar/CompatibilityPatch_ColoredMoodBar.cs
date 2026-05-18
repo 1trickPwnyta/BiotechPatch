@@ -1,6 +1,7 @@
 ﻿using ColoredMoodBar13;
 using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,21 +11,18 @@ using Verse;
 namespace BiotechPatch.MechsInColonistBar
 {
     [StaticConstructorOnStartup]
-    public static class CompatibilityPatch_ColoredMoodBar
-    {
-        static CompatibilityPatch_ColoredMoodBar()
-        {
-            Type type = AccessTools.TypeByName("ColoredMoodBar13.MoodCache");
-            if (type != null)
-            {
-                var harmony = new Harmony(SpecialMod_Multipatch_Biotech.PACKAGE_ID);
-                harmony.Patch(type.Method("DoMood"), transpiler: typeof(CompatibilityPatch_ColoredMoodBar_DoMood).Method(nameof(CompatibilityPatch_ColoredMoodBar_DoMood.Transpiler)));
-            }
-        }
-    }
-
     public static class CompatibilityPatch_ColoredMoodBar_DoMood
     {
+        static CompatibilityPatch_ColoredMoodBar_DoMood()
+        {
+            Type type = AccessTools.TypeByName("ColoredMoodBar13.MoodCache");
+            if (type != null && (SpecialModSettings<Settings>.Instance as SpecialModSettings_Multipatch_Biotech).ShouldEnableCodeForSetting(Settings.MechsInColonistBar))
+            {
+                var harmony = new Harmony(SpecialMod_Multipatch_Biotech.PACKAGE_ID);
+                harmony.Patch(type.Method("DoMood"), transpiler: typeof(CompatibilityPatch_ColoredMoodBar_DoMood).Method(nameof(Transpiler)));
+            }
+        }
+
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator il)
         {
             List<CodeInstruction> instructionsList = instructions.ToList();
